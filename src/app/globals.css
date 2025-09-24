@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* Skeleton loading animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,8 +22,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-baskervville);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +36,70 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+/* Custom font classes */
+.font-montserrat {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+.font-baskervville {
+  font-family: var(--font-baskervville), Georgia, serif;
+}
+
+/* Global link styles */
+a {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  text-underline-offset: 6px;
+}
+
+/* Navigation link overrides */
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+  text-underline-offset: unset;
+}
+
+/* Dynamic line-height for headings and body text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  line-height: calc(1em + 8px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
