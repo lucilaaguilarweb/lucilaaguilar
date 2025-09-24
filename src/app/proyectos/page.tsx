@@ -5,24 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ProjectModal from "@/components/ProjectModal";
 import { projectsData } from "@/data/projectsData";
 
 export default function Proyectos() {
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Show only the first 4 projects in the carousel
   const featuredProjects = projectsData.slice(0, 4);
-
-  const openModal = (projectId: string) => {
-    setSelectedProject(projectId);
-  };
-
-  const closeModal = () => {
-    setSelectedProject(null);
-  };
 
   const scrollToProject = (index: number) => {
     if (scrollContainerRef.current) {
@@ -62,10 +52,6 @@ export default function Proyectos() {
 
     return () => clearInterval(interval);
   }, [currentIndex]);
-
-  const selectedProjectData = selectedProject
-    ? projectsData.find((project) => project.slug === selectedProject)
-    : null;
 
   return (
     <div className="min-h-screen">
@@ -224,11 +210,6 @@ export default function Proyectos() {
           </div>
         </div>
       </section>
-
-      {/* Project Modal */}
-      {selectedProjectData && (
-        <ProjectModal project={selectedProjectData} onClose={closeModal} />
-      )}
 
       <Footer />
     </div>
