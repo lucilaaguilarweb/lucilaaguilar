@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ExhibitionPage from "@/components/ExhibitionPage";
 import { exhibitionsData } from "@/data/exhibitionsData";
+import { getExhibitionImages } from "@/lib/exhibitionImages";
 
 interface PageProps {
   params: Promise<{
@@ -26,10 +27,13 @@ export default async function ExhibitionDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // Get all images dynamically from the exhibition folder
+  const exhibitionImages = getExhibitionImages(exhibition.folderPath);
+
   return (
     <div className="min-h-screen">
       <Navigation />
-      <ExhibitionPage exhibition={exhibition} />
+      <ExhibitionPage exhibition={exhibition} images={exhibitionImages} />
       <Footer />
     </div>
   );

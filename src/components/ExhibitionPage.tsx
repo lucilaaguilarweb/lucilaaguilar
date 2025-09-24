@@ -4,12 +4,17 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Exhibition } from "@/data/exhibitionsData";
+import { ExhibitionImage } from "@/lib/exhibitionImages";
 
 interface ExhibitionPageProps {
   exhibition: Exhibition;
+  images: ExhibitionImage[];
 }
 
-export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
+export default function ExhibitionPage({
+  exhibition,
+  images,
+}: ExhibitionPageProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openImageModal = (imagePath: string) => {
@@ -23,7 +28,7 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gray-100 pt-24 pb-12">
+      <div className="bg-gray-100 pb-12 h-[60vh] flex items-center justify-center pt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-normal text-gray-900 mb-4 font-baskervville">
@@ -77,8 +82,7 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                {exhibition.images.length}{" "}
-                {exhibition.images.length === 1 ? "imagen" : "imágenes"}
+                {images.length} {images.length === 1 ? "imagen" : "imágenes"}
               </span>
             </div>
           </div>
@@ -130,7 +134,7 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
             Galería de Imágenes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {exhibition.images.map((image, index) => (
+            {images.map((image, index) => (
               <div
                 key={index}
                 className="group cursor-pointer"
@@ -143,9 +147,12 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
                 <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden">
                   <Image
                     src={`/images/exposiciones/${exhibition.folderPath}/${image.filename}`}
-                    alt={image.alt}
+                    alt={`${exhibition.title} - ${image.filename}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index < 6 ? "eager" : "lazy"}
+                    priority={index < 3}
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-black bg-opacity-50 rounded-full p-3">
@@ -166,7 +173,7 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-gray-600 text-center">
-                  {image.alt}
+                  {image.filename.replace(/\.[^/.]+$/, "")}
                 </p>
               </div>
             ))}
@@ -230,6 +237,8 @@ export default function ExhibitionPage({ exhibition }: ExhibitionPageProps) {
               width={1200}
               height={800}
               className="max-w-full max-h-full object-contain"
+              sizes="100vw"
+              priority
             />
           </div>
         </div>

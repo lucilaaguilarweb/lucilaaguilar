@@ -1,8 +1,3 @@
-export interface ExhibitionImage {
-  filename: string;
-  alt: string;
-}
-
 export interface Exhibition {
   id: string;
   slug: string;
@@ -12,7 +7,6 @@ export interface Exhibition {
   year: string;
   coverImage: string;
   folderPath: string;
-  images: ExhibitionImage[];
   link?: string;
 }
 
@@ -27,24 +21,6 @@ export const exhibitionsData: Exhibition[] = [
     year: "2024",
     coverImage: "/images/exposiciones/arch-days-cdmx/01-archdays-proyecta.jpg",
     folderPath: "arch-days-cdmx",
-    images: [
-      {
-        filename: "01-archdays-proyecta.jpg",
-        alt: "Arch Days CDMX Proyecta",
-      },
-      {
-        filename: "02-crece-tu-casa-archdays.jpg",
-        alt: "Crece tu casa Arch Days",
-      },
-      {
-        filename: "03-img-4125.jpg",
-        alt: "Arch Days CDMX imagen 1",
-      },
-      {
-        filename: "04-img-4126.jpg",
-        alt: "Arch Days CDMX imagen 2",
-      },
-    ],
   },
   {
     id: "bienal-habana-intersecciones",
@@ -57,36 +33,6 @@ export const exhibitionsData: Exhibition[] = [
     coverImage:
       "/images/exposiciones/bienal-habana-intersecciones/01-bienal-habana-portada.jpg",
     folderPath: "bienal-habana-intersecciones",
-    images: [
-      {
-        filename: "01-bienal-habana-portada.jpg",
-        alt: "Portada Bienal La Habana Intersecciones",
-      },
-      {
-        filename: "02-bienal-habana-1.jpg",
-        alt: "Bienal La Habana imagen 1",
-      },
-      {
-        filename: "03-bienal-habana-2.jpg",
-        alt: "Bienal La Habana imagen 2",
-      },
-      {
-        filename: "04-bienal-habana-3.jpg",
-        alt: "Bienal La Habana imagen 3",
-      },
-      {
-        filename: "05-bienal-habana-4.jpg",
-        alt: "Bienal La Habana imagen 4",
-      },
-      {
-        filename: "06-bienal-habana-5.jpg",
-        alt: "Bienal La Habana imagen 5",
-      },
-      {
-        filename: "07-bienal-habana-7.jpg",
-        alt: "Bienal La Habana imagen 7",
-      },
-    ],
   },
   {
     id: "ixua-time-space-existence",
@@ -97,38 +43,8 @@ export const exhibitionsData: Exhibition[] = [
       "Proyecto IXUA presentado en la Bienal de Venecia 2021, explorando la relación entre tiempo, espacio y existencia en la arquitectura contemporánea.",
     year: "2021",
     coverImage:
-      "/images/exposiciones/ixua-time-space-existence/01-room7-002.jpeg",
+      "/images/exposiciones/ixua-time-space-existence/01-ixua-room7-1.jpg",
     folderPath: "ixua-time-space-existence",
-    images: [
-      {
-        filename: "01-room7-002.jpeg",
-        alt: "IXUA Room 7 imagen 2",
-      },
-      {
-        filename: "02-room7-003.jpeg",
-        alt: "IXUA Room 7 imagen 3",
-      },
-      {
-        filename: "03-room7-004.jpg",
-        alt: "IXUA Room 7 imagen 4",
-      },
-      {
-        filename: "04-room7-006.jpg",
-        alt: "IXUA Room 7 imagen 6",
-      },
-      {
-        filename: "05-room7-007.jpg",
-        alt: "IXUA Room 7 imagen 7",
-      },
-      {
-        filename: "06-room7-008.jpg",
-        alt: "IXUA Room 7 imagen 8",
-      },
-      {
-        filename: "07-room7-011.jpg",
-        alt: "IXUA Room 7 imagen 11",
-      },
-    ],
   },
   {
     id: "linaje-creativo",
@@ -140,44 +56,6 @@ export const exhibitionsData: Exhibition[] = [
     year: "2022",
     coverImage: "/images/exposiciones/linaje-creativo/01-linaje-creativo-1.jpg",
     folderPath: "linaje-creativo",
-    images: [
-      {
-        filename: "01-linaje-creativo-1.jpg",
-        alt: "Linaje Creativo imagen 1",
-      },
-      {
-        filename: "02-linaje-creativo-2.jpg",
-        alt: "Linaje Creativo imagen 2",
-      },
-      {
-        filename: "03-linaje-creativo-3.jpg",
-        alt: "Linaje Creativo imagen 3",
-      },
-      {
-        filename: "04-linaje-creativo-4.jpg",
-        alt: "Linaje Creativo imagen 4",
-      },
-      {
-        filename: "05-linaje-creativo-5.jpg",
-        alt: "Linaje Creativo imagen 5",
-      },
-      {
-        filename: "06-linaje-creativo-6.jpg",
-        alt: "Linaje Creativo imagen 6",
-      },
-      {
-        filename: "07-linaje-creativo-7.jpg",
-        alt: "Linaje Creativo imagen 7",
-      },
-      {
-        filename: "08-linaje-creativo-8.jpg",
-        alt: "Linaje Creativo imagen 8",
-      },
-      {
-        filename: "09-muro-intencion.jpeg",
-        alt: "Muro Intención Linaje Creativo",
-      },
-    ],
   },
   {
     id: "yoo-design-week-mexico",
@@ -188,30 +66,8 @@ export const exhibitionsData: Exhibition[] = [
       "Pabellón YOO presentado en Design Week México 2020, donde Lucila Aguilar fue homenajeada por su innovación en materiales sustentables y diseño consciente.",
     year: "2020",
     coverImage:
-      "/images/exposiciones/yoo-design-week-mexico/fotos-y-videos/01 Yoo Portrait .jpg",
+      "/images/exposiciones/yoo-design-week-mexico/02-yoo-design-week-2.jpg",
     folderPath: "yoo-design-week-mexico",
-    images: [
-      {
-        filename: "fotos-y-videos/01 Yoo Portrait .jpg",
-        alt: "YOO Portrait Design Week",
-      },
-      {
-        filename: "fotos-y-videos/01 Yoo Portrait 2.tif",
-        alt: "YOO Portrait 2",
-      },
-      {
-        filename: "fotos-y-videos/02 Yoo Xuxes 2.jpg",
-        alt: "YOO Xuxes 2",
-      },
-      {
-        filename: "fotos-y-videos/06 Yoo Noche 4.tif",
-        alt: "YOO Noche 4",
-      },
-      {
-        filename: "planos/01 Yoo Conjunto_h.jpg",
-        alt: "YOO Conjunto plano",
-      },
-    ],
     link: "https://www.designweekmexico.com/",
   },
 ];

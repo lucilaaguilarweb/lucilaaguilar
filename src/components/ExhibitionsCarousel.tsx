@@ -181,14 +181,7 @@ export default function ExhibitionsCarousel() {
                         {exhibition.description}
                       </p>
 
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-500">
-                          {exhibition.images.length}{" "}
-                          {exhibition.images.length === 1
-                            ? "imagen"
-                            : "imágenes"}
-                        </span>
-
+                      <div className="flex items-center justify-end">
                         <Link
                           href={`/exposiciones/${exhibition.slug}`}
                           className="inline-flex items-center text-black font-medium uppercase underline hover:text-gray-700 transition-colors duration-200"

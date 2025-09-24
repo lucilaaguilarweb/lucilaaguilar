@@ -23,7 +23,7 @@ export default function PublicationPage({ publication }: PublicationPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gray-100 py-12 h-[60vh] flex items-center justify-center pt-20">
+      <div className="bg-gray-100 py-12 h-[70vh] flex items-center justify-center pt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-normal text-gray-900 mb-4 font-baskervville">
