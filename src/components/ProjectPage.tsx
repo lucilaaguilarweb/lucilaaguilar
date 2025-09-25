@@ -81,35 +81,6 @@ export default function ProjectPage({ project, images }: ProjectPageProps) {
 
       {/* Project Info */}
       <section className="py-16 px-4 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="text-center">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-500 mb-2">
-              Año
-            </h3>
-            <p className="text-2xl font-light text-gray-800">{project.year}</p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-500 mb-2">
-              Categoría
-            </h3>
-            <p className="text-2xl font-light text-gray-800 capitalize">
-              {project.category}
-            </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-500 mb-2">
-              Tipo
-            </h3>
-            <p className="text-2xl font-light text-gray-800">
-              {project.category === "residential" && "Residencial"}
-              {project.category === "commercial" && "Comercial"}
-              {project.category === "public" && "Público"}
-              {project.category === "exhibition" && "Exposición"}
-              {project.category === "other" && "Otros"}
-            </p>
-          </div>
-        </div>
-
         {/* Project Description */}
         {project.content && (
           <div className="prose prose-lg max-w-none">

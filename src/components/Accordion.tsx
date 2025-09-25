@@ -57,9 +57,9 @@ export default function Accordion({
 
               {openItems.includes(index) && (
                 <div className="py-6 px-4">
-                  <p className="text-gray-400 leading-relaxed">
+                  <div className="text-gray-400 leading-relaxed whitespace-pre-line">
                     {item.description}
-                  </p>
+                  </div>
                 </div>
               )}
             </div>

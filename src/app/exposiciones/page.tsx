@@ -20,7 +20,7 @@ export default function Exposiciones() {
 
   // Filter exhibition publications from the unified data
   const exhibitionPublications = publicationsData.filter(
-    (publication) => publication.type === "exhibition"
+    (publication) => publication.type === "exposicion"
   );
 
   useEffect(() => {

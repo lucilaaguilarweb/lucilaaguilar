@@ -10,7 +10,7 @@ export interface Publication {
   subtitle: string;
   description: string;
   year: string;
-  type: "magazine" | "catalog" | "exhibition" | "festival" | "book" | "web";
+  type: "revista" | "catalogo" | "exposicion" | "festival" | "libro" | "web";
   coverImage?: string;
   images?: PublicationImage[];
   folderPath?: string;
@@ -26,7 +26,7 @@ export const publicationsData: Publication[] = [
     description:
       "Publicación especializada que destaca nuestro trabajo en arquitectura sustentable y el uso innovador del bambú en proyectos contemporáneos.",
     year: "2024",
-    type: "magazine",
+    type: "revista",
     coverImage: "/images/medios/arquine-revista/01-portada.jpg",
     folderPath: "medios/arquine-revista",
     images: [
@@ -60,7 +60,7 @@ export const publicationsData: Publication[] = [
     description:
       "Libro anual que recopila los proyectos más destacados del año, incluyendo nuestras propuestas de arquitectura sustentable.",
     year: "2018",
-    type: "book",
+    type: "libro",
     coverImage: "/images/medios/arquine-libro-2017-2018/01-portada.jpg",
     folderPath: "medios/arquine-libro-2017-2018",
     images: [
@@ -80,7 +80,7 @@ export const publicationsData: Publication[] = [
     description:
       "Catálogo oficial de la Bienal de La Habana, donde nuestro trabajo fue seleccionado para representar la arquitectura sustentable mexicana.",
     year: "2023",
-    type: "exhibition",
+    type: "exposicion",
     coverImage: "/images/medios/bienal-habana/01-portada.jpg",
     folderPath: "medios/bienal-habana",
     images: [
@@ -110,7 +110,7 @@ export const publicationsData: Publication[] = [
     description:
       "Documentación del Pabellón Yoo presentado en Design Week México 2020, donde Lucila Aguilar fue homenajeada por su innovación en materiales sustentables.",
     year: "2020",
-    type: "exhibition",
+    type: "exposicion",
     coverImage: "/images/medios/design-week/01-portada.jpg",
     folderPath: "medios/design-week",
     images: [
@@ -137,7 +137,7 @@ export const publicationsData: Publication[] = [
     description:
       "Publicación internacional que destaca nuestro enfoque en arquitectura regenerativa y el uso consciente de materiales naturales.",
     year: "2022",
-    type: "magazine",
+    type: "revista",
     coverImage: "/images/medios/down-to-earth-loft/01-portada.jpg",
     folderPath: "medios/down-to-earth-loft",
     images: [
@@ -186,7 +186,7 @@ export const publicationsData: Publication[] = [
     description:
       "Publicación especializada que presenta nuestro trabajo como ejemplo de arquitectura regenerativa y diseño consciente con el medio ambiente.",
     year: "2023",
-    type: "magazine",
+    type: "revista",
     coverImage: "/images/medios/green-architecture-loft/01-portada.jpg",
     folderPath: "medios/green-architecture-loft",
     images: [
@@ -253,7 +253,7 @@ export const publicationsData: Publication[] = [
     description:
       "Catálogo de nuestra participación en la exposición de arquitectura sustentable en Venecia, representando la innovación mexicana en materiales naturales.",
     year: "2025",
-    type: "exhibition",
+    type: "exposicion",
     coverImage: "/images/medios/venecia-tse-2021-2025/01-portada-2025.jpg",
     folderPath: "medios/venecia-tse-2021-2025",
     images: [
@@ -320,7 +320,7 @@ export const publicationsData: Publication[] = [
     title: "The Best Bamboo – Bamboo Social Housing",
     subtitle: "Vivienda social sustentable",
     description:
-      "The project began as a social housing proposal that Uumbal manages for its field workers. Uumbal is an agro-forestry company with 15,000 hectares of pine and palm plantations in southeastern Mexico -Chiapas, Veracruz, Tabasco and Campeche.",
+      "El proyecto comenzó como una propuesta de vivienda social que gestiona Uumbal para sus trabajadores de campo. Uumbal es una empresa agroforestal con 15,000 hectáreas de plantaciones de pino y palma en el sureste de México -Chiapas, Veracruz, Tabasco y Campeche.",
     year: "2023",
     type: "web",
   },
@@ -330,7 +330,7 @@ export const publicationsData: Publication[] = [
     title: "Green – Building with Consciousness",
     subtitle: "Arquitectura consciente",
     description:
-      "Grow your House is a proposal for Sustainable Social Housing that seeks to be a catalyst for change and inspiration by proposing a scheme that disseminates well-being and promotes social and environmental awareness in its inhabitants and their communities.",
+      "Crece tu Casa es una propuesta de Vivienda Social Sustentable que busca ser catalizador de cambio e inspiración proponiendo un esquema que difunde bienestar y promueve conciencia social y ambiental en sus habitantes y sus comunidades.",
     year: "2023",
     type: "web",
   },
