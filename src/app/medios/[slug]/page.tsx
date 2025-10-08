@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PublicationPage from "@/components/PublicationPage";
 import { publicationsData } from "@/data/publicationsData";
+import { getPublicationImages } from "@/lib/publicationImages";
 
 interface PageProps {
   params: Promise<{
@@ -24,10 +25,15 @@ export default async function PublicationDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // Dynamically load images from the folder
+  const publicationImages = publication.folderPath
+    ? getPublicationImages(publication.folderPath)
+    : [];
+
   return (
     <div className="min-h-screen">
       <Navigation />
-      <PublicationPage publication={publication} />
+      <PublicationPage publication={publication} images={publicationImages} />
       <Footer />
     </div>
   );

@@ -6,22 +6,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ExhibitionsCarousel from "@/components/ExhibitionsCarousel";
-import { publicationsData } from "@/data/publicationsData";
 
 export default function Exposiciones() {
-  const [openItems, setOpenItems] = useState<number[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const toggleItem = (index: number) => {
-    setOpenItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
-  // Filter exhibition publications from the unified data
-  const exhibitionPublications = publicationsData.filter(
-    (publication) => publication.type === "exposicion"
-  );
 
   useEffect(() => {
     // Simulate loading time for images

@@ -9,12 +9,9 @@ export default function PublicationsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Filter only print publications (those with images and coverImage)
+  // Filter only print publications (those with folderPath and coverImage)
   const printPublications = publicationsData.filter(
-    (publication) =>
-      publication.images &&
-      publication.images.length > 0 &&
-      publication.coverImage
+    (publication) => publication.folderPath && publication.coverImage
   );
 
   // Responsive items per page based on screen size
@@ -168,32 +165,17 @@ export default function PublicationsCarousel() {
                           {publication.year}
                         </span>
                       </div>
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-block px-3 py-1 bg-black/70 text-white text-sm font-medium rounded-full uppercase">
-                          {publication.type}
-                        </span>
-                      </div>
                     </div>
 
                     <div className="p-6">
                       <h3 className="text-2xl font-normal text-gray-900 mb-2 font-baskervville">
                         {publication.title}
                       </h3>
-                      <p className="text-base text-gray-600 mb-4 font-medium">
-                        {publication.subtitle}
-                      </p>
                       <p className="text-sm text-gray-700 mb-4 line-clamp-2">
                         {publication.description}
                       </p>
 
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-500">
-                          {publication.images!.length}{" "}
-                          {publication.images!.length === 1
-                            ? "imagen"
-                            : "imágenes"}
-                        </span>
-
+                      <div className="flex items-center justify-end">
                         <Link
                           href={`/medios/${publication.slug}`}
                           className="inline-flex items-center text-black font-medium uppercase underline hover:text-gray-700 transition-colors duration-200"

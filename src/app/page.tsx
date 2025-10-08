@@ -1,16 +1,67 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { timelineData } from "@/data/timelineData";
+import useHeroClipPathAnimation from "@/components/useHeroClipPathAnimation";
+import useMultiImageClipPathAnimation from "@/components/useMultiImageClipPathAnimation";
 
 export default function Home() {
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  // Create refs for all other images on the page
+  const section1Image1Ref = useRef<HTMLDivElement>(null);
+  const section1Image2Ref = useRef<HTMLDivElement>(null);
+  const section2Image1Ref = useRef<HTMLDivElement>(null);
+  const section2Image2Ref = useRef<HTMLDivElement>(null);
+  const section2Image3Ref = useRef<HTMLDivElement>(null);
+  const section3Image1Ref = useRef<HTMLDivElement>(null);
+  const section4Image1Ref = useRef<HTMLDivElement>(null);
+  const section4Image2Ref = useRef<HTMLDivElement>(null);
+  const section5Image1Ref = useRef<HTMLDivElement>(null);
+  const section6Image1Ref = useRef<HTMLDivElement>(null);
+
+  // Initialize hero clip-path animation
+  useHeroClipPathAnimation(imageRef, {
+    enabled: true,
+    maxInset: 100,
+    minInset: 0,
+  });
+
+  // Initialize multi-image clip-path animation for all other images
+  useMultiImageClipPathAnimation(
+    [
+      section1Image1Ref,
+      section1Image2Ref,
+      section2Image1Ref,
+      section2Image2Ref,
+      section2Image3Ref,
+      section3Image1Ref,
+      section4Image1Ref,
+      section4Image2Ref,
+      section5Image1Ref,
+      section6Image1Ref,
+    ],
+    {
+      enabled: true,
+      maxInset: 80,
+      minInset: 0,
+    }
+  );
+
   return (
     <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-80 max-w-[1440px] mx-auto">
-        <div className="absolute inset-8 overflow-hidden mt-6">
+      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-96 max-w-[1440px] mx-auto">
+        <div
+          ref={imageRef}
+          className="absolute inset-8 overflow-hidden mt-6"
+          style={{ clipPath: "inset(0px)" }}
+        >
           <Image
             src="/images/hero.png"
             alt="Bamboo architecture in nature"
@@ -19,7 +70,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-72">
+        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-88">
           <h1 className="text-3xl md:text-5xl font-normal text-black md:mb-6 mb-4 font-baskervville drop-shadow-lg">
             ARQUITECTURA QUE SANA Y CONECTA
           </h1>
@@ -78,7 +129,11 @@ export default function Home() {
       {/* Cocoon Project Section */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 md:pb-24 pb-0">
         <div className="flex flex-row md:gap-8 gap-4 mb-12">
-          <div className="relative md:h-[720px] h-80 w-2/6">
+          <div
+            ref={section1Image1Ref}
+            className="relative md:h-[720px] h-80 w-2/6"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section1-1.png"
               alt="Bamboo texture"
@@ -86,7 +141,11 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="relative md:h-[720px] h-80 w-4/6">
+          <div
+            ref={section1Image2Ref}
+            className="relative md:h-[720px] h-80 w-4/6"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section1-2.png"
               alt="Person in bamboo structure"
@@ -117,7 +176,11 @@ export default function Home() {
 
       {/* Building with Green Roof */}
       <section className="relative md:px-8 px-4 max-w-[1440px] mx-auto pt-20">
-        <div className="relative w-full h-96">
+        <div
+          ref={section2Image1Ref}
+          className="relative w-full md:h-96 h-64"
+          style={{ clipPath: "inset(80px)" }}
+        >
           <Image
             src="/images/section2-1.png"
             alt="Green roof building with gardener"
@@ -125,8 +188,12 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <div className="flex flex-row md:gap-8 gap-4 w-full md:pt-8 pt-4">
-          <div className="relative w-1/2 h-96">
+        <div className="flex md:flex-row flex-col md:gap-8 gap-4 w-full md:pt-8 pt-4">
+          <div
+            ref={section2Image2Ref}
+            className="relative md:w-1/2 w-full md:h-96 h-64"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section2-2.png"
               alt="Decorative light pattern"
@@ -134,7 +201,11 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="relative w-1/2 h-96">
+          <div
+            ref={section2Image3Ref}
+            className="relative md:w-1/2 w-full md:h-96 h-64"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section2-3.png"
               alt="Interior with bamboo and pool"
@@ -156,7 +227,11 @@ export default function Home() {
           BAMBÚ: NATURALEZA HECHA ARQUITECTURA
         </h2>
         <div className="flex flex-col">
-          <div className="relative h-96 md:h-[500px] md:mb-12 mb-0 md:mt-0 mt-8 md:order-1 order-2">
+          <div
+            ref={section3Image1Ref}
+            className="relative h-64 md:h-[500px] md:mb-12 mb-0 md:mt-0 mt-8 md:order-1 order-2"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section3-1.png"
               alt="Bamboo architecture building"
@@ -200,7 +275,11 @@ export default function Home() {
           <div className="flex md:flex-row flex-col gap-8">
             {/* Humanitrek Caucasio Project */}
             <div className="text-left">
-              <div className="relative md:h-[800px] h-96 mb-6">
+              <div
+                ref={section4Image1Ref}
+                className="relative md:h-[800px] h-96 mb-6"
+                style={{ clipPath: "inset(80px)" }}
+              >
                 <Image
                   src="/images/section4-1.png"
                   alt="Humanitrek Caucasio project"
@@ -225,7 +304,11 @@ export default function Home() {
 
             {/* Pabellón Semilla Project */}
             <div className="text-left">
-              <div className="relative md:h-[800px] h-96 mb-6">
+              <div
+                ref={section4Image2Ref}
+                className="relative md:h-[800px] h-96 mb-6"
+                style={{ clipPath: "inset(80px)" }}
+              >
                 <Image
                   src="/images/section4-2.png"
                   alt="Pabellón Semilla project"
@@ -301,7 +384,11 @@ export default function Home() {
 
       {/* Illuminated Structures */}
       <section className="py-20 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-96 md:h-[600px]">
+        <div
+          ref={section5Image1Ref}
+          className="relative h-96 md:h-[600px]"
+          style={{ clipPath: "inset(80px)" }}
+        >
           <Image
             src="/images/section5-1.png"
             alt="Illuminated bamboo structures at night"
@@ -314,7 +401,11 @@ export default function Home() {
       {/* Ideas that Travel */}
       <section className="md:py-20 pb-16 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:gap-24 gap-8 items-center">
-          <div className="relative md:w-5/12 w-full h-[600px]">
+          <div
+            ref={section6Image1Ref}
+            className="relative md:w-5/12 w-full h-[600px]"
+            style={{ clipPath: "inset(80px)" }}
+          >
             <Image
               src="/images/section6-1.png"
               alt="Magazine cover"
