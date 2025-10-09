@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Publication } from "@/data/publicationsData";
-import { PublicationImage } from "@/lib/publicationImages";
+import { PublicationImage } from "@/types/publication";
 
 interface PublicationPageProps {
   publication: Publication;
