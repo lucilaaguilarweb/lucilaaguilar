@@ -1,4 +1,7 @@
 public/images/proyectos-backup
 backups
 *.sh
+.next
+node_modules
+.git
 
