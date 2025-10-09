@@ -103,7 +103,7 @@ export default function Proyectos() {
       <section className="relative h-[70vh] flex items-center justify-center bg-gray-100">
         <div className="relative w-full h-full">
           <Image
-            src="/images/proyectos/gst-library-proyecto/gst-library-proyecto-exterior-03.jpg"
+            src="/images/proyectos/humanitree/humanitree-01.jpg"
             alt="Proyectos que regeneran y conectan"
             fill
             className="object-cover object-center"
