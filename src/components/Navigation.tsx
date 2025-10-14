@@ -20,6 +20,7 @@ export default function Navigation() {
     { href: "/proyectos", label: "PROYECTOS" },
     { href: "/estudio", label: "ESTUDIO" },
     { href: "/bambu", label: "BAMBÚ" },
+    { href: "/cocoon-project", label: "COCOON PROJECT" },
     { href: "/medios", label: "MEDIOS" },
     { href: "/exposiciones", label: "EXPOSICIONES" },
     { href: "/contacto", label: "CONTACTO" },
@@ -42,7 +43,7 @@ export default function Navigation() {
           className={`font-montserrat transition-colors ${
             isMobile
               ? "block text-2xl font-normal text-gray-900 hover:text-gray-600"
-              : "text-gray-700 hover:text-gray-900"
+              : "text-sm text-gray-700 hover:text-gray-900"
           }`}
         >
           {item.label}
@@ -67,12 +68,12 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             <MenuItems />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
@@ -114,7 +115,7 @@ export default function Navigation() {
 
       {/* Mobile Offcanvas Menu */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
