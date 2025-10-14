@@ -20,7 +20,7 @@ export default function Exposiciones() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Loading Spinner */}
       {isLoading && <LoadingSpinner />}
 

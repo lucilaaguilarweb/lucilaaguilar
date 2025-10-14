@@ -25,7 +25,7 @@ export default function PublicationDetailPage() {
   const images: { filename: string; alt: string }[] = [];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <PublicationPage publication={publication} images={images} />
       <Footer />

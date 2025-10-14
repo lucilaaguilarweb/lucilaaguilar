@@ -2,21 +2,14 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import useScrollAnimation from "@/components/useScrollAnimation";
 import { projectsData } from "@/data/projectsData";
 
-interface ProjectImagesData {
-  [key: string]: Array<{ filename: string; alt: string }>;
-}
-
 export default function Proyectos() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
-  const [carouselIndexes, setCarouselIndexes] = useState<
-    Record<string, number>
-  >({});
-  const [projectImages, setProjectImages] = useState<ProjectImagesData>({});
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   // Check if mobile (disable animations on mobile)
@@ -33,6 +26,20 @@ export default function Proyectos() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Scroll to project if hash is present
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      // Wait for the page to render
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100);
+    }
+  }, []);
+
   // Initialize scroll animation (desktop only)
   useScrollAnimation(projectsContainerRef, {
     zoomOutValue: 0.95,
@@ -43,56 +50,8 @@ export default function Proyectos() {
     enabled: !isMobile,
   });
 
-  // Load images for expanded project
-  useEffect(() => {
-    if (expandedProject) {
-      const project = projectsData.find((p) => p.slug === expandedProject);
-      if (project && !projectImages[expandedProject]) {
-        // Fetch images from API route
-        fetch(`/api/project-images?folderPath=${project.folderPath}`)
-          .then((res) => res.json())
-          .then((images) => {
-            setProjectImages((prev) => ({
-              ...prev,
-              [expandedProject]: images,
-            }));
-          })
-          .catch((err) => console.error("Error loading images:", err));
-      }
-    }
-  }, [expandedProject, projectImages]);
-
   const toggleProject = (projectId: string) => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
-    // Reset carousel to first image when opening
-    if (expandedProject !== projectId) {
-      setCarouselIndexes({ ...carouselIndexes, [projectId]: 0 });
-    }
-  };
-
-  const nextImage = (
-    projectSlug: string,
-    totalImages: number,
-    e: React.MouseEvent
-  ) => {
-    e.stopPropagation();
-    setCarouselIndexes({
-      ...carouselIndexes,
-      [projectSlug]: ((carouselIndexes[projectSlug] || 0) + 1) % totalImages,
-    });
-  };
-
-  const prevImage = (
-    projectSlug: string,
-    totalImages: number,
-    e: React.MouseEvent
-  ) => {
-    e.stopPropagation();
-    setCarouselIndexes({
-      ...carouselIndexes,
-      [projectSlug]:
-        ((carouselIndexes[projectSlug] || 0) - 1 + totalImages) % totalImages,
-    });
   };
 
   return (
@@ -115,7 +74,7 @@ export default function Proyectos() {
             <div className="text-center text-white z-10 px-4">
               <h1 className="text-5xl md:text-7xl font-normal mb-6 font-baskervville">
                 PROYECTOS
-              </h1>
+          </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
                 Arquitectura que regenera y conecta
               </p>
@@ -133,12 +92,16 @@ export default function Proyectos() {
             return (
               <div
                 key={project.slug}
+                id={project.slug}
                 className="transition-all duration-500 ease-in-out flex justify-center md:mr-24"
               >
                 {/* Mobile Layout */}
                 <div className="md:hidden w-full">
                   {/* Title and Year - Above image */}
-                  <div className="mb-4">
+                  <div
+                    className="mb-4 cursor-pointer"
+                    onClick={() => toggleProject(project.slug)}
+                  >
                     <h2 className="text-2xl font-normal text-gray-900 mb-2 font-baskervville">
                       {project.title}
                     </h2>
@@ -147,102 +110,19 @@ export default function Proyectos() {
                     </p>
                   </div>
 
-                  {/* Image / Carousel - Full width, always same size */}
+                  {/* Image - Full width, always same size */}
                   <div
                     className="cursor-pointer relative"
                     onClick={() => toggleProject(project.slug)}
                   >
                     <div className="relative overflow-hidden aspect-[4/3] w-full">
-                      {isExpanded && projectImages[project.slug] ? (
-                        // Carousel when expanded
-                        <div className="">
-                          <Image
-                            src={`/images/proyectos/${project.folderPath}/${
-                              projectImages[project.slug][
-                                carouselIndexes[project.slug] || 0
-                              ]?.filename || project.coverImage
-                            }`}
-                            alt={`${project.title} - Image ${
-                              (carouselIndexes[project.slug] || 0) + 1
-                            }`}
-                            fill
-                            className="object-cover"
-                            sizes="100vw"
-                          />
-
-                          {/* Carousel Controls */}
-                          {projectImages[project.slug].length > 1 && (
-                            <div className="opacity-0 animate-fadeIn delay-100">
-                              {/* Previous Button */}
-                              <button
-                                onClick={(e) =>
-                                  prevImage(
-                                    project.slug,
-                                    projectImages[project.slug].length,
-                                    e
-                                  )
-                                }
-                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
-                              >
-                                <svg
-                                  className="w-5 h-5"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M15 19l-7-7 7-7"
-                                  />
-                                </svg>
-                              </button>
-
-                              {/* Next Button */}
-                              <button
-                                onClick={(e) =>
-                                  nextImage(
-                                    project.slug,
-                                    projectImages[project.slug].length,
-                                    e
-                                  )
-                                }
-                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
-                              >
-                                <svg
-                                  className="w-5 h-5"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 5l7 7-7 7"
-                                  />
-                                </svg>
-                              </button>
-
-                              {/* Image Counter */}
-                              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                                {(carouselIndexes[project.slug] || 0) + 1} /{" "}
-                                {projectImages[project.slug].length}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        // Cover image when collapsed
-                        <Image
-                          src={`/images/proyectos/${project.folderPath}/${project.coverImage}`}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                          sizes="100vw"
-                        />
-                      )}
+                      <Image
+                        src={`/images/proyectos/${project.folderPath}/${project.coverImage}`}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                      />
                     </div>
                   </div>
 
@@ -265,14 +145,37 @@ export default function Proyectos() {
                       <p className="text-base text-gray-700 leading-relaxed mb-6">
                         {project.description}
                       </p>
+                      {/* Ver más CTA */}
+                      <Link
+                        href={`/proyectos/${project.slug}`}
+                        className="text-sm text-gray-700 hover:text-black uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all duration-200"
+                      >
+                        Ver más
+                        <svg
+                          className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+                      </Link>
                     </div>
                   </div>
-                </div>
+        </div>
 
                 {/* Desktop Layout */}
                 <div className="hidden md:flex md:gap-8 items-start">
                   {/* Left: Title and Year - gets pushed by image growth */}
-                  <div className="pt-2 text-end transition-all duration-500 ease-in-out flex-shrink-0 w-[180px]">
+                  <div
+                    className="pt-2 text-end transition-all duration-500 ease-in-out flex-shrink-0 w-[180px] cursor-pointer"
+                    onClick={() => toggleProject(project.slug)}
+                  >
                     <h2 className="text-2xl font-normal text-gray-900 mb-2 font-baskervville text-right">
                       {project.title}
                     </h2>
@@ -281,7 +184,7 @@ export default function Proyectos() {
                     </p>
                   </div>
 
-                  {/* Center: Image / Carousel */}
+                  {/* Center: Image */}
                   <div
                     className="cursor-pointer group flex-shrink-0 transition-all duration-500 ease-in-out relative"
                     onClick={() => toggleProject(project.slug)}
@@ -291,96 +194,13 @@ export default function Proyectos() {
                         isExpanded ? "w-[720px]" : "w-[480px]"
                       }`}
                     >
-                      {isExpanded && projectImages[project.slug] ? (
-                        // Carousel when expanded - fades in
-                        <div className="">
-                          <Image
-                            src={`/images/proyectos/${project.folderPath}/${
-                              projectImages[project.slug][
-                                carouselIndexes[project.slug] || 0
-                              ]?.filename || project.coverImage
-                            }`}
-                            alt={`${project.title} - Image ${
-                              (carouselIndexes[project.slug] || 0) + 1
-                            }`}
-                            fill
-                            className="object-cover"
-                            sizes="720px"
-                          />
-
-                          {/* Carousel Controls - fade in with delay */}
-                          {projectImages[project.slug].length > 1 && (
-                            <div className="opacity-0 animate-fadeIn delay-100">
-                              {/* Previous Button */}
-                              <button
-                                onClick={(e) =>
-                                  prevImage(
-                                    project.slug,
-                                    projectImages[project.slug].length,
-                                    e
-                                  )
-                                }
-                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
-                              >
-                                <svg
-                                  className="w-6 h-6"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M15 19l-7-7 7-7"
-                                  />
-                                </svg>
-                              </button>
-
-                              {/* Next Button */}
-                              <button
-                                onClick={(e) =>
-                                  nextImage(
-                                    project.slug,
-                                    projectImages[project.slug].length,
-                                    e
-                                  )
-                                }
-                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
-                              >
-                                <svg
-                                  className="w-6 h-6"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 5l7 7-7 7"
-                                  />
-                                </svg>
-                              </button>
-
-                              {/* Image Counter */}
-                              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                                {(carouselIndexes[project.slug] || 0) + 1} /{" "}
-                                {projectImages[project.slug].length}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        // Cover image when collapsed
-                        <Image
-                          src={`/images/proyectos/${project.folderPath}/${project.coverImage}`}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 480px"
-                        />
-                      )}
+                    <Image
+                        src={`/images/proyectos/${project.folderPath}/${project.coverImage}`}
+                      alt={project.title}
+                      fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 720px"
+                    />
                     </div>
                   </div>
 
@@ -401,10 +221,30 @@ export default function Proyectos() {
                       <p className="text-base text-gray-700 leading-relaxed mb-6">
                         {project.description}
                       </p>
+                      {/* Ver más CTA */}
+                      <Link
+                        href={`/proyectos/${project.slug}`}
+                        className="text-sm text-gray-700 hover:text-black uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all duration-200"
+                    >
+                      Ver más
+                      <svg
+                          className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
             );
           })}
         </div>

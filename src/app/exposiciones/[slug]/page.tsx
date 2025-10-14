@@ -31,7 +31,7 @@ export default async function ExhibitionDetailPage({ params }: PageProps) {
   const exhibitionImages = getExhibitionImages(exhibition.folderPath);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <ExhibitionPage exhibition={exhibition} images={exhibitionImages} />
       <Footer />

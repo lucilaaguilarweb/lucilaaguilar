@@ -6,7 +6,7 @@ import { studioTimelineData } from "@/data/studioTimelineData";
 
 export default function Estudio() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
       {/* Hero Section */}

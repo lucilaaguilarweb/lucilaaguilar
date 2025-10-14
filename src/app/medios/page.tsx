@@ -33,7 +33,7 @@ export default function Medios() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Loading Spinner */}
       {isLoading && <LoadingSpinner />}
 

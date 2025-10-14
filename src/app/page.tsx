@@ -52,7 +52,7 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
       {/* Hero Section */}
@@ -406,31 +406,31 @@ export default function Home() {
             className="relative md:w-5/12 w-full h-[600px]"
             style={{ clipPath: "inset(80px)" }}
           >
-            <Image
-              src="/images/section6-1.png"
-              alt="Magazine cover"
-              fill
-              className="object-contain rounded-lg"
-            />
-          </div>
+          <Image
+            src="/images/section6-1.png"
+            alt="Magazine cover"
+            fill
+            className="object-contain rounded-lg"
+          />
+        </div>
 
-          <div className="md:w-7/12 w-full">
-            <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
-              IDEAS QUE VIAJAN Y TRASCIENDEN
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
+        <div className="md:w-7/12 w-full">
+          <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
+            IDEAS QUE VIAJAN Y TRASCIENDEN
+          </h2>
+          <p className="text-lg text-gray-700 mb-8">
               Nuestros proyectos han sido parte de bienales, exposiciones y
               medios internacionales como Green Architecture for a sustainable
               future, ⁠Down to Earth, ⁠XIII Bienal de La Habana y Time Space
               Existence 2021 y 2025. Publicamos manuales y recursos para
               inspirar y compartir soluciones sostenibles con el mundo.
-            </p>
-            <a
-              href="#"
-              className="text-gray-900 font-semibold underline hover:no-underline transition-all"
-            >
-              VER MEDIOS
-            </a>
+          </p>
+          <a
+            href="#"
+            className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+          >
+            VER MEDIOS
+          </a>
           </div>
         </div>
       </section>
