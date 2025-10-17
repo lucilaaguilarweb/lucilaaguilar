@@ -80,7 +80,7 @@ export default function CocoonProject() {
               their groundbreaking Cocoon Project earned them the prestigious
               accolade of Best Luxury Sustainable Hotel Architecture in Mexico
               from Luxury Lifestyle Award, firmly positioning their place among
-              the world's elite architectural visionaries.
+              the world&apos;s elite architectural visionaries.
             </p>
             <button
               onClick={() =>
@@ -202,7 +202,7 @@ export default function CocoonProject() {
                   rel="noopener noreferrer"
                   className="text-gray-900 hover:text-gray-600 underline transition-colors"
                 >
-                  Winner's profile on the Awards website
+                  Winner&apos;s profile on the Awards website
                 </a>
               </p>
               <p className="text-lg">

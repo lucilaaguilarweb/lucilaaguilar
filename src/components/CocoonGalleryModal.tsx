@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 interface CocoonGalleryModalProps {
@@ -25,7 +25,21 @@ export default function CocoonGalleryModal({
       document.body.style.overflow = "hidden";
 
       // Load images for the section
-      loadSectionImages();
+      const imageCounts: { [key: number]: number } = {
+        1: 11, // seccion-1-01.jpg to seccion-1-11.jpg
+        2: 10, // seccion-2-01.jpg to seccion-2-10.jpg
+        3: 10, // seccion-3-01.jpg to seccion-3-10.jpg
+        4: 3, // seccion-4-01.jpg to seccion-4-03.jpg
+      };
+
+      const count = imageCounts[section] || 0;
+      const imageList = Array.from({ length: count }, (_, i) => {
+        const num = String(i + 1).padStart(2, "0");
+        return `/images/cocoon-project/seccion-${section}-${num}.jpg`;
+      });
+
+      setImages(imageList);
+      setCurrentIndex(0);
     } else {
       document.body.style.overflow = "unset";
     }
@@ -35,45 +49,29 @@ export default function CocoonGalleryModal({
     };
   }, [isOpen, section]);
 
-  const loadSectionImages = () => {
-    // Define image counts for each section
-    const imageCounts: { [key: number]: number } = {
-      1: 11, // seccion-1-01.jpg to seccion-1-11.jpg
-      2: 10, // seccion-2-01.jpg to seccion-2-10.jpg
-      3: 10, // seccion-3-01.jpg to seccion-3-10.jpg
-      4: 3, // seccion-4-01.jpg to seccion-4-03.jpg
-    };
-
-    const count = imageCounts[section] || 0;
-    const imageList = Array.from({ length: count }, (_, i) => {
-      const num = String(i + 1).padStart(2, "0");
-      return `/images/cocoon-project/seccion-${section}-${num}.jpg`;
-    });
-
-    setImages(imageList);
-    setCurrentIndex(0);
-  };
-
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Escape") onClose();
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === "ArrowLeft") prevImage();
-  };
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    },
+    [onClose, nextImage, prevImage]
+  );
 
   useEffect(() => {
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
       return () => window.removeEventListener("keydown", handleKeyDown);
     }
-  }, [isOpen, images.length]);
+  }, [isOpen, handleKeyDown]);
 
   if (!isOpen) return null;
 
