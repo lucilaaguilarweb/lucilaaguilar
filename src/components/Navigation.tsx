@@ -18,9 +18,9 @@ export default function Navigation() {
   // Single menu items array
   const menuItems = [
     { href: "/proyectos", label: "PROYECTOS" },
+    { href: "/cocoon-project", label: "COCOON PROJECT" },
     { href: "/estudio", label: "ESTUDIO" },
     { href: "/bambu", label: "BAMBÚ" },
-    { href: "/cocoon-project", label: "COCOON PROJECT" },
     { href: "/medios", label: "MEDIOS" },
     { href: "/exposiciones", label: "EXPOSICIONES" },
     { href: "/contacto", label: "CONTACTO" },

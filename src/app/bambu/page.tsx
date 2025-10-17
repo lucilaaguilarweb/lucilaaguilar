@@ -436,6 +436,39 @@ export default function Bambu() {
                 </svg>
               </a>
             </div>
+
+            {/* Manual 12 */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
+              <div className="mb-4">
+                <h3 className="text-lg font-medium text-gray-900 font-baskervville">
+                  IXUA - Presentación
+                </h3>
+                <p className="text-sm text-gray-500">
+                  Presentación del proyecto
+                </p>
+              </div>
+              <a
+                href="/manuales/13.IXUA_Presentancion_02_2021_4_Baja 8.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-black font-medium uppercase underline hover:text-gray-700 transition-colors duration-200"
+              >
+                Ver PDF
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -62,7 +62,7 @@ export default function Proyectos() {
       <section className="relative h-[70vh] flex items-center justify-center bg-gray-100">
         <div className="relative w-full h-full">
           <Image
-            src="/images/proyectos/humanitree/humanitree-01.jpg"
+            src="/images/proyectos/pericos/pericos-01.jpg"
             alt="Proyectos que regeneran y conectan"
             fill
             className="object-cover object-center"
@@ -74,7 +74,7 @@ export default function Proyectos() {
             <div className="text-center text-white z-10 px-4">
               <h1 className="text-5xl md:text-7xl font-normal mb-6 font-baskervville">
                 PROYECTOS
-          </h1>
+              </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
                 Arquitectura que regenera y conecta
               </p>
@@ -105,9 +105,36 @@ export default function Proyectos() {
                     <h2 className="text-2xl font-normal text-gray-900 mb-2 font-baskervville">
                       {project.title}
                     </h2>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider">
+                    <p className="text-sm text-gray-500 uppercase tracking-wider mb-3">
                       {project.year}
                     </p>
+                    {/* Awards below year */}
+                    {project.awards && project.awards.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {Array.from(
+                          new Map(
+                            project.awards.map((award) => [
+                              award.imageFile,
+                              award,
+                            ])
+                          ).values()
+                        ).map((award, index) => (
+                          <div
+                            key={index}
+                            className="relative w-12 h-12 grayscale hover:grayscale-0 transition-all duration-300"
+                            title={`${award.title} - ${award.year}`}
+                          >
+                            <Image
+                              src={`/images/premios/${award.imageFile}`}
+                              alt={award.title}
+                              fill
+                              className="object-contain"
+                              sizes="48px"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Image - Full width, always same size */}
@@ -153,21 +180,21 @@ export default function Proyectos() {
                         Ver más
                         <svg
                           className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
                       </Link>
                     </div>
                   </div>
-        </div>
+                </div>
 
                 {/* Desktop Layout */}
                 <div className="hidden md:flex md:gap-8 items-start">
@@ -179,9 +206,36 @@ export default function Proyectos() {
                     <h2 className="text-2xl font-normal text-gray-900 mb-2 font-baskervville text-right">
                       {project.title}
                     </h2>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider">
+                    <p className="text-sm text-gray-500 uppercase tracking-wider text-right mb-3">
                       {project.year}
                     </p>
+                    {/* Awards below year */}
+                    {project.awards && project.awards.length > 0 && (
+                      <div className="flex flex-wrap gap-2 justify-end">
+                        {Array.from(
+                          new Map(
+                            project.awards.map((award) => [
+                              award.imageFile,
+                              award,
+                            ])
+                          ).values()
+                        ).map((award, index) => (
+                          <div
+                            key={index}
+                            className="relative w-12 h-12 grayscale hover:grayscale-0 transition-all duration-300"
+                            title={`${award.title} - ${award.year}`}
+                          >
+                            <Image
+                              src={`/images/premios/${award.imageFile}`}
+                              alt={award.title}
+                              fill
+                              className="object-contain"
+                              sizes="48px"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Center: Image */}
@@ -194,13 +248,13 @@ export default function Proyectos() {
                         isExpanded ? "w-[720px]" : "w-[480px]"
                       }`}
                     >
-                    <Image
+                      <Image
                         src={`/images/proyectos/${project.folderPath}/${project.coverImage}`}
-                      alt={project.title}
-                      fill
+                        alt={project.title}
+                        fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 720px"
-                    />
+                      />
                     </div>
                   </div>
 
@@ -225,26 +279,26 @@ export default function Proyectos() {
                       <Link
                         href={`/proyectos/${project.slug}`}
                         className="text-sm text-gray-700 hover:text-black uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all duration-200"
-                    >
-                      Ver más
-                      <svg
-                          className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                        Ver más
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
                       </Link>
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
             );
           })}
         </div>

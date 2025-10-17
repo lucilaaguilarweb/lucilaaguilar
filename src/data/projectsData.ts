@@ -34,13 +34,19 @@ export const projectsData: Project[] = [
         year: "2025",
         title: "Luxury Lifestyle Award",
         description: "Best Sustainable Hotel Architecture in México",
-        imageFile: "logos-01.jpg",
+        imageFile: "Time Space VENECIA 2025.png",
       },
       {
         year: "2025",
         title: "Time Space Existence",
         description: "Participación en Venecia",
-        imageFile: "logos-02.jpg",
+        imageFile: "Time Space VENECIA 2025.png",
+      },
+      {
+        year: "2025",
+        title: "LOFT PUBLICATIONS",
+        description: "",
+        imageFile: "LOFT.png",
       },
     ],
     content: `Vivir en la naturaleza, sin renunciar al confort
@@ -80,7 +86,7 @@ Más que un edificio, el Cocoon es una forma de vida sostenible. Su diseño mini
         year: "2023",
         title: "LOFT PUBLICATIONS",
         description: "Down to Earth - Rammed Earth Architecture",
-        imageFile: "logos-03.jpg",
+        imageFile: "LOFT.png",
       },
     ],
     content: `Arquitectura que dialoga con el cacao y la selva
@@ -145,7 +151,7 @@ Construido con la participación de la comunidad y trabajadores de la finca, el 
         year: "2021",
         title: "Noldi Schreck Awards",
         description: "Segundo Lugar Arquitectura de Paisaje",
-        imageFile: "logos-04.jpg",
+        imageFile: "NOLDI.png",
       },
     ],
     content: `Arquitectura sustentable al servicio del cacao y la comunidad
@@ -217,13 +223,13 @@ El resultado es un entorno que integra juego, aprendizaje y naturaleza en un mis
         year: "2016",
         title: "XVI Bienal de Arquitectura",
         description: "Mención Honorífica",
-        imageFile: "logos-05.jpg",
+        imageFile: "BIENAL.png",
       },
       {
         year: "2021",
         title: "LOFT PUBLICATIONS",
         description: "Green Architecture for a Sustainable Future",
-        imageFile: "logos-06.jpg",
+        imageFile: "LOFT.png",
       },
     ],
     content: `Infraestructura sostenible para dignificar el campo mexicano
@@ -258,13 +264,31 @@ Prototipos constructivos
         year: "2021",
         title: "Architizer Awards",
         description: "Finalist Private House (1000-2000 sq ft)",
-        imageFile: "logos-07.jpg",
+        imageFile: "ARCHITIZNER.png",
       },
       {
         year: "2021",
         title: "World Design Awards",
         description: "Runner Up",
-        imageFile: "logos-08.jpg",
+        imageFile: "WORLD D.png",
+      },
+      {
+        year: "2021",
+        title: "Arquine",
+        description: "",
+        imageFile: "AQRUINE.png",
+      },
+      {
+        year: "2021",
+        title: "NY Awards",
+        description: "",
+        imageFile: "NY.png",
+      },
+      {
+        year: "2021",
+        title: "LOFT PUBLICATIONS",
+        description: "",
+        imageFile: "LOFT.png",
       },
     ],
     content: `Vivienda social sustentable, modular y digna
@@ -295,7 +319,7 @@ Cada prototipo integra bambú como estructura principal, acompañado de distinto
         year: "2021",
         title: "Noldi Schreck Awards",
         description: "Ganadora Arquitectura Institucional Pública",
-        imageFile: "logos-09.jpg",
+        imageFile: "NOLDI.png",
       },
     ],
     content: `Un aula hecha con manos, bambú y comunidad
@@ -336,7 +360,13 @@ Crece tu Escuela demostró que la educación puede crecer desde la comunidad mis
         year: "2021",
         title: "TSE Venecia",
         description: "Mención Especial en Arquitectura",
-        imageFile: "logos-10.jpg",
+        imageFile: "TSV2021.png",
+      },
+      {
+        year: "2021",
+        title: "LOFT PUBLICATIONS",
+        description: "",
+        imageFile: "LOFT.png",
       },
     ],
     content: `Un barrio sustentable tejido con bambú y selva
