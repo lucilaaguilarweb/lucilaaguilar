@@ -28,7 +28,7 @@ export default function CocoonProject() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[90vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-40 mb-56 max-w-[1440px] mx-auto">
+      <section className="relative lg:h-[140vh] md:h-[90vh] h-[70vh] flex items-center p-8 lg:mb-40 mb-56  mx-auto mt-8">
         <div className="absolute inset-8 overflow-hidden mt-6">
           <Image
             src="/images/cocoon-project/cocoon-project-hero.jpg"
@@ -45,13 +45,24 @@ export default function CocoonProject() {
             priority
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-40">
-          <h1 className="text-2xl md:text-4xl font-normal text-black mb-6 font-baskervville drop-shadow-lg">
+        <div className="lg:relative absolute z-10 left-1/2 transform -translate-x-1/2 text-center p-8 lg:h-full flex flex-col top-20 lg:bottom-auto -bottom-40">
+          <h1 className="text-3xl md:text-4xl font-normal text-white mb-2 font-baskervville drop-shadow-lg">
             The Cocoon - Redefiniendo el lujo
           </h1>
-          <p className="text-lg text-black mb-4 drop-shadow-md">
+          <a
+            href="/contacto"
+            className="text-lg text-white mb-4 drop-shadow-md hover:underline transition-all cursor-pointer"
+          >
             ‍Comienza tu eco hotel con un concepto ganador.
-          </p>
+          </a>
+          <div className="relative w-32 h-32 mx-auto mt-0 ">
+            <Image
+              src="/images/cocoon-project/icono.png"
+              alt="Cocoon Icon"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </section>
 
@@ -178,7 +189,7 @@ export default function CocoonProject() {
       </section>
 
       {/* Section 4 */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 items-end bg-gray-100 py-32">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 items-center bg-gray-100 py-32">
         <div className="relative w-full md:w-1/2 md:pl-16">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville mb-4">
             Reconocimientos y Exposiciones.
@@ -234,18 +245,18 @@ export default function CocoonProject() {
             </button>
           </div>
         </div>
-        <div className="relative w-full md:w-1/2 flex flex-row gap-16 items-center">
-          <div className="relative md:w-64 md:h-64 w-40 h-48">
+        <div className="relative w-full md:w-1/2 flex flex-col gap-16 items-center">
+          <div className="relative md:w-64 md:h-88 w-40 h-48">
             <Image
-              src="/images/cocoon-project/seccion-4-portada.jpg"
+              src="/images/cocoon-project/seccion-4-portada-2.jpg"
               alt="Modern architecture"
               fill
               className="object-cover"
             />
           </div>
-          <div className="relative md:w-64 md:h-88 w-40 h-48">
+          <div className="relative md:w-64 md:h-64 w-40 h-48">
             <Image
-              src="/images/cocoon-project/seccion-4-01.jpg"
+              src="/images/cocoon-project/seccion-4-portada.jpg"
               alt="Modern architecture"
               fill
               className="object-cover"

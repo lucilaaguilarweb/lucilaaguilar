@@ -17,7 +17,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     year: "2024",
-    title: "JORGE ESTEVE AGUILAR",
+    title: "Jorge Esteve Aguilar",
     description: "Se une Jorge como socio estratégico de LAA.",
   },
   {

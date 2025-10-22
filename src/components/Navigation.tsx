@@ -17,13 +17,13 @@ export default function Navigation() {
 
   // Single menu items array
   const menuItems = [
-    { href: "/proyectos", label: "PROYECTOS" },
-    { href: "/cocoon-project", label: "COCOON PROJECT" },
-    { href: "/estudio", label: "ESTUDIO" },
-    { href: "/bambu", label: "BAMBÚ" },
-    { href: "/medios", label: "MEDIOS" },
-    { href: "/exposiciones", label: "EXPOSICIONES" },
-    { href: "/contacto", label: "CONTACTO" },
+    { href: "/proyectos", label: "Proyectos" },
+    { href: "/cocoon-project", label: "Cocoon Project" },
+    { href: "/estudio", label: "Estudio" },
+    { href: "/bambu", label: "Bambú" },
+    { href: "/medios", label: "Medios" },
+    { href: "/exposiciones", label: "Exposiciones" },
+    { href: "/contacto", label: "Contacto" },
   ];
 
   // Single menu component with conditional styling
@@ -61,7 +61,7 @@ export default function Navigation() {
               src="/images/logo.png"
               alt="Lucila Aguilar"
               width={200}
-              height={40}
+              height={100}
               className="h-14 w-auto"
               priority
             />
@@ -135,7 +135,7 @@ export default function Navigation() {
             {/* Menu Header */}
             <div className="flex items-center justify-between p-6">
               <div className="text-xl font-normal text-gray-900 font-montserrat">
-                MENÚ
+                Menú
               </div>
               <button
                 onClick={closeMenu}

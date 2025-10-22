@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Exhibition } from "@/data/exhibitionsData";
 import { ExhibitionImage } from "@/lib/exhibitionImages";
+import GalleryModal from "@/components/GalleryModal";
 
 interface ExhibitionPageProps {
   exhibition: Exhibition;
@@ -15,14 +16,21 @@ export default function ExhibitionPage({
   exhibition,
   images,
 }: ExhibitionPageProps) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const openImageModal = (imagePath: string) => {
-    setSelectedImage(imagePath);
+  // Create full image paths array
+  const imagePaths = images.map(
+    (image) => `/images/exposiciones/${exhibition.folderPath}/${image.filename}`
+  );
+
+  const openImageModal = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsGalleryOpen(true);
   };
 
   const closeImageModal = () => {
-    setSelectedImage(null);
+    setIsGalleryOpen(false);
   };
 
   return (
@@ -138,11 +146,7 @@ export default function ExhibitionPage({
               <div
                 key={index}
                 className="group cursor-pointer"
-                onClick={() =>
-                  openImageModal(
-                    `/images/exposiciones/${exhibition.folderPath}/${image.filename}`
-                  )
-                }
+                onClick={() => openImageModal(index)}
               >
                 <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden">
                   <Image
@@ -206,43 +210,14 @@ export default function ExhibitionPage({
         </div>
       </div>
 
-      {/* Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-          onClick={closeImageModal}
-        >
-          <div className="relative max-w-6xl max-h-full">
-            <button
-              onClick={closeImageModal}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200"
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <Image
-              src={selectedImage}
-              alt="Imagen ampliada"
-              width={1200}
-              height={800}
-              className="max-w-full max-h-full object-contain"
-              sizes="100vw"
-              priority
-            />
-          </div>
-        </div>
-      )}
+      {/* Gallery Modal */}
+      <GalleryModal
+        isOpen={isGalleryOpen}
+        onClose={closeImageModal}
+        images={imagePaths}
+        initialIndex={selectedImageIndex}
+        title={exhibition.title}
+      />
     </div>
   );
 }

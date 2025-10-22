@@ -46,7 +46,7 @@ export default function Bambu() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto">
+      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto mt-8">
         <div className="absolute inset-8 overflow-hidden mt-6">
           <Image
             src="/images/bambu-1.png"
@@ -56,9 +56,9 @@ export default function Bambu() {
             priority
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-48">
+        <div className="lg:relative absolute z-10 lg:max-w-sm w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-48">
           <h1 className="text-2xl md:text-4xl font-normal text-black mb-6 font-baskervville drop-shadow-lg">
-            ARQUITECTURA CON BAMBÚ: LA FIBRA DE UN FUTURO SOSTENIBLE
+            Arquitectura con bambú: la fibra de un futuro sostenible
           </h1>
           <p className="text-lg text-black mb-4 drop-shadow-md">
             Conectamos innovación, tecnología y técnicas artesanales para crear
@@ -71,7 +71,7 @@ export default function Bambu() {
       <section className="md:py-20 py-8 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-8 font-baskervville">
-            EL MATERIAL QUE SANA Y REGENERA
+            El material que sana y regenera
           </h2>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             El bambú es más que un material de construcción: es un símbolo de
@@ -89,7 +89,7 @@ export default function Bambu() {
       {/* Downloadables Section */}
       <section className="py-20 bg-gray-100 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-12 font-baskervville text-center">
-          DESCARGABLES
+          Descargables
         </h2>
 
         <div className="max-w-6xl mx-auto">
@@ -441,7 +441,7 @@ export default function Bambu() {
             <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
               <div className="mb-4">
                 <h3 className="text-lg font-medium text-gray-900 font-baskervville">
-                  IXUA - Presentación
+                  Ixua - Presentación
                 </h3>
                 <p className="text-sm text-gray-500">
                   Presentación del proyecto
@@ -472,87 +472,6 @@ export default function Bambu() {
           </div>
         </div>
       </section>
-
-      {/* Multimedia Section */}
-      <section className="py-20 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-12 font-baskervville text-center">
-          MULTIMEDIA
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video) => (
-            <div
-              key={video.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              <div
-                className="relative h-48 bg-black flex items-center justify-center cursor-pointer hover:bg-gray-900 transition-colors group"
-                onClick={() => setSelectedVideo(video.embedUrl)}
-              >
-                {/* Play Button Circle */}
-                <div className="w-20 h-20 rounded-full bg-black border-4 border-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg
-                    className="w-10 h-10 text-white ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-normal text-gray-900 mb-2 font-baskervville">
-                  {video.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Video Modal */}
-      {selectedVideo && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setSelectedVideo(null)}
-        >
-          <div
-            className="relative w-full max-w-5xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
-              aria-label="Close video"
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Video Embed */}
-            <iframe
-              className="w-full h-full"
-              src={selectedVideo}
-              title="Video Player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

@@ -29,7 +29,7 @@ export default function CocoonGalleryModal({
         1: 11, // seccion-1-01.jpg to seccion-1-11.jpg
         2: 10, // seccion-2-01.jpg to seccion-2-10.jpg
         3: 10, // seccion-3-01.jpg to seccion-3-10.jpg
-        4: 3, // seccion-4-01.jpg to seccion-4-03.jpg
+        4: 4, // seccion-4-01.jpg to seccion-4-03.jpg
       };
 
       const count = imageCounts[section] || 0;
@@ -77,7 +77,7 @@ export default function CocoonGalleryModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-90"
       onClick={onClose}
     >
       <div
@@ -87,7 +87,7 @@ export default function CocoonGalleryModal({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors"
+          className="absolute top-4 right-4 z-10 text-black hover:text-gray-500 transition-colors"
           aria-label="Close modal"
         >
           <svg
@@ -108,10 +108,10 @@ export default function CocoonGalleryModal({
 
         {/* Section Title */}
         <div className="text-center mb-4">
-          <h2 className="text-2xl md:text-3xl font-normal text-white font-baskervville">
+          <h2 className="text-2xl md:text-3xl font-normal text-black font-baskervville">
             {sectionTitle}
           </h2>
-          <p className="text-white text-sm mt-2">
+          <p className="text-black text-sm mt-2">
             {currentIndex + 1} / {images.length}
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function CocoonGalleryModal({
             <>
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-500 transition-colors bg-white bg-opacity-50 rounded-full p-3"
                 aria-label="Previous image"
               >
                 <svg
@@ -155,7 +155,7 @@ export default function CocoonGalleryModal({
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-500 transition-colors bg-white bg-opacity-50 rounded-full p-3"
                 aria-label="Next image"
               >
                 <svg
@@ -186,7 +186,7 @@ export default function CocoonGalleryModal({
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative w-20 h-20 flex-shrink-0 transition-opacity ${
                   idx === currentIndex
-                    ? "opacity-100 ring-2 ring-white"
+                    ? "opacity-100 ring-2 ring-black"
                     : "opacity-50 hover:opacity-75"
                 }`}
               >

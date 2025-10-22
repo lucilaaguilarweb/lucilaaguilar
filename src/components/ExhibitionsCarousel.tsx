@@ -62,7 +62,7 @@ export default function ExhibitionsCarousel() {
       <div className="flex md:flex-row flex-col md:justify-between justify-start md:items-center items-start mb-6 gap-4">
         <div className="flex md:flex-row flex-col md:gap-8 gap-2">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville text-left">
-            EXPOSICIONES
+            Exposiciones
           </h2>
           {/* Exhibition Selector */}
           <div className="flex-1 max-w-xs">
@@ -161,11 +161,6 @@ export default function ExhibitionsCarousel() {
                       <div className="absolute top-4 left-4">
                         <span className="inline-block px-3 py-1 bg-white/90 text-black text-sm font-medium rounded-full">
                           {exhibition.year}
-                        </span>
-                      </div>
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-block px-3 py-1 bg-black/70 text-white text-sm font-medium rounded-full uppercase">
-                          exposición
                         </span>
                       </div>
                     </div>

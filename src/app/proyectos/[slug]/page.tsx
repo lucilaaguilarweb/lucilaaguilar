@@ -62,10 +62,10 @@ export default function ProjectDetailPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
 
-      {/* Main Content - 50/50 Split */}
+      {/* Main Content - 70/30 Split */}
       <main className="flex flex-col md:flex-row">
-        {/* Left Side: Image Carousel (50%) */}
-        <div className="w-full md:flex-1 bg-gray-100 h-[600px] md:h-screen md:sticky md:top-0 mt-16">
+        {/* Left Side: Image Carousel (70%) */}
+        <div className="w-full lg:w-[60%] md:w-[50%] bg-gray-100 h-[600px] md:h-screen md:sticky md:top-0 mt-16">
           <div className="relative w-full h-full p-4 md:p-8">
             {isLoading ? (
               <div className="absolute inset-0 flex items-center justify-center h-full">
@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
                   alt={`${project.title} - Image ${currentImageIndex + 1}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 70vw"
                   priority
                 />
 
@@ -134,8 +134,8 @@ export default function ProjectDetailPage() {
           </div>
         </div>
 
-        {/* Right Side: Project Information (50%) */}
-        <div className="flex-1 p-8 md:p-12">
+        {/* Right Side: Project Information (30%) */}
+        <div className="w-full lg:w-[40%] md:w-[50%] p-8 md:p-12">
           {/* Back Button */}
           <Link
             href={`/proyectos#${project.slug}`}

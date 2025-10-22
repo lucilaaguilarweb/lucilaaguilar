@@ -14,7 +14,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "arch-days-cdmx",
     slug: "arch-days-cdmx",
-    title: "ARCH DAYS CDMX",
+    title: "Arch Days CDMX",
     subtitle: "Conferencia internacional de arquitectura",
     description:
       "Participación en Arch Days CDMX, donde presentamos nuestras innovaciones en arquitectura sustentable y el uso del bambú como material constructivo.",
@@ -25,7 +25,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "bienal-habana-intersecciones",
     slug: "bienal-habana-intersecciones",
-    title: "BIENAL LA HABANA - INTERSECCIONES",
+    title: "Bienal La Habana - Intersecciones",
     subtitle: "Exposición internacional de arquitectura",
     description:
       "Participación en la Bienal de La Habana con el proyecto 'Intersecciones', explorando las conexiones entre arquitectura sustentable y comunidades locales.",
@@ -37,7 +37,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "ixua-time-space-existence",
     slug: "ixua-time-space-existence",
-    title: "IXUA TIME SPACE EXISTENCE",
+    title: "Ixua Time Space Existence",
     subtitle: "Bienal de Venecia 2021",
     description:
       "Proyecto IXUA presentado en la Bienal de Venecia 2021, explorando la relación entre tiempo, espacio y existencia en la arquitectura contemporánea.",
@@ -49,7 +49,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "linaje-creativo",
     slug: "linaje-creativo",
-    title: "LINAJE CREATIVO",
+    title: "Linaje Creativo",
     subtitle: "Exposición UNAM - Homenaje a Víctor de la Lama",
     description:
       "Exposición individual en la UNAM como homenaje a Víctor de la Lama, explorando el linaje creativo en la arquitectura mexicana contemporánea.",
@@ -60,7 +60,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "yoo-design-week-mexico",
     slug: "yoo-design-week-mexico",
-    title: "YOO DESIGN WEEK MÉXICO",
+    title: "Yoo Design Week México",
     subtitle: "Pabellón YOO - Homenaje 2020",
     description:
       "Pabellón YOO presentado en Design Week México 2020, donde Lucila Aguilar fue homenajeada por su innovación en materiales sustentables y diseño consciente.",
@@ -73,7 +73,7 @@ export const exhibitionsData: Exhibition[] = [
   {
     id: "fyja",
     slug: "fyja",
-    title: "FYJA",
+    title: "Fyja",
     subtitle: "Conferencia internacional de arquitectura",
     description:
       "Participación en  FYJA, Festival de Flores y Jardines 2025, sembrando una semilla para los &quot;Jardines del Futuro”.",

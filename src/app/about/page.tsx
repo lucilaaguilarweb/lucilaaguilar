@@ -33,7 +33,7 @@ export default function About() {
       <section className="py-20 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
-            NUESTRA HISTORIA
+            Nuestra historia
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Somos un despacho de arquitectura comprometido con la creación de

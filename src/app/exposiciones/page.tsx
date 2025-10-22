@@ -27,7 +27,7 @@ export default function Exposiciones() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto">
+      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto mt-8">
         <div className="absolute inset-8 overflow-hidden mt-6">
           <Image
             src="/images/exposiciones/yoo-design-week-mexico/06-yoo-design-week-6.jpg"
@@ -38,9 +38,9 @@ export default function Exposiciones() {
             sizes="100vw"
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-48">
-          <h1 className="text-3xl md:text-5xl font-normal text-black mb-6 font-baskervville drop-shadow-lg">
-            EXPOSICIONES Y BIENALES
+        <div className="lg:relative absolute z-10 lg:max-w-sm w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-48">
+          <h1 className="text-2xl md:text-5xl font-normal text-black mb-6 font-baskervville drop-shadow-lg">
+            Exposiciones y bienales
           </h1>
           <p className="text-lg text-black mb-4 drop-shadow-md">
             Participación en eventos internacionales que reconocen la innovación

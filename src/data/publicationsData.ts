@@ -15,7 +15,7 @@ export const publicationsData: Publication[] = [
   {
     id: "green-architecture-loft",
     slug: "green-architecture-loft",
-    title: "GREEN ARCHITECTURE - LOFT",
+    title: "Green Architecture - Loft",
     subtitle: "Revista internacional de arquitectura verde",
     description:
       "Publicación especializada que presenta nuestro trabajo como ejemplo de arquitectura regenerativa y diseño consciente con el medio ambiente.",
@@ -27,7 +27,7 @@ export const publicationsData: Publication[] = [
   {
     id: "down-to-earth-loft",
     slug: "down-to-earth-loft",
-    title: "DOWN TO EARTH - LOFT",
+    title: "Down to Earth - Loft",
     subtitle: "Revista especializada en arquitectura sustentable",
     description:
       "Publicación internacional que destaca nuestro enfoque en arquitectura regenerativa y el uso consciente de materiales naturales.",
@@ -39,7 +39,7 @@ export const publicationsData: Publication[] = [
   {
     id: "arquine-libro-2017-2018",
     slug: "arquine-libro-2017-2018",
-    title: "ARQUINE LIBRO 2017-2018",
+    title: "Arquine Libro 2017-2018",
     subtitle: "Compendio anual de arquitectura",
     description:
       "Libro anual que recopila los proyectos más destacados del año, incluyendo nuestras propuestas de arquitectura sustentable.",
@@ -51,7 +51,7 @@ export const publicationsData: Publication[] = [
   {
     id: "arquine-revista",
     slug: "arquine-revista",
-    title: "ARQUINE REVISTA",
+    title: "Arquine Revista",
     subtitle: "Revista especializada en arquitectura",
     description:
       "Publicación especializada que destaca nuestro trabajo en arquitectura sustentable y el uso innovador del bambú en proyectos contemporáneos.",
@@ -63,7 +63,7 @@ export const publicationsData: Publication[] = [
   {
     id: "venecia-tse-2021-2025",
     slug: "venecia-tse-2021-2025",
-    title: "VENECIA TSE 2021-2025",
+    title: "Venecia Tse 2021-2025",
     subtitle: "Exposición internacional de arquitectura sustentable",
     description:
       "Catálogo de nuestra participación en la exposición de arquitectura sustentable en Venecia, representando la innovación mexicana en materiales naturales.",
@@ -75,7 +75,7 @@ export const publicationsData: Publication[] = [
   {
     id: "design-week",
     slug: "design-week",
-    title: "DESIGN WEEK MÉXICO",
+    title: "Design Week México",
     subtitle: "Pabellón Yoo - DWM 2020",
     description:
       "Documentación del Pabellón Yoo presentado en Design Week México 2020, donde Lucila Aguilar fue homenajeada por su innovación en materiales sustentables.",
@@ -87,7 +87,7 @@ export const publicationsData: Publication[] = [
   {
     id: "bienal-habana",
     slug: "bienal-habana",
-    title: "BIENAL LA HABANA",
+    title: "Bienal La Habana",
     subtitle: "Catálogo de exposición internacional",
     description:
       "Catálogo oficial de la Bienal de La Habana, donde nuestro trabajo fue seleccionado para representar la arquitectura sustentable mexicana.",
@@ -99,7 +99,7 @@ export const publicationsData: Publication[] = [
   {
     id: "film-festival-ny",
     slug: "film-festival-ny",
-    title: "FILM FESTIVAL NY",
+    title: "Film Festival NY",
     subtitle: "Documental de arquitectura sustentable",
     description:
       "Documentación de nuestro proyecto presentado en el Film Festival de Nueva York, destacando la narrativa visual de la arquitectura sustentable.",
@@ -111,7 +111,7 @@ export const publicationsData: Publication[] = [
   {
     id: "ink-talk",
     slug: "ink-talk",
-    title: "INK TALK",
+    title: "Ink Talk",
     subtitle: "Conferencia internacional de arquitectura",
     description:
       "Documentación de nuestra participación como speakers en Ink Talk, compartiendo nuestra experiencia en arquitectura sustentable con bambú.",
@@ -134,7 +134,7 @@ export const publicationsData: Publication[] = [
   {
     id: "arkin-excelente-material",
     slug: "arkin-excelente-material",
-    title: "ARKIN – Excelente material",
+    title: "Arkin – Excelente material",
     subtitle: "Análisis técnico del bambú",
     description:
       "Presenta el bambú como un material sustentable y resistente, con propiedades estructurales comparables o superiores al concreto y varilla, que además se trabaja en seco sin contaminar.",
@@ -144,7 +144,7 @@ export const publicationsData: Publication[] = [
   {
     id: "arkin-pabellon-yoo-dwm",
     slug: "arkin-pabellon-yoo-dwm",
-    title: "ARKIN – Pabellón Yoo, DWM",
+    title: "Arkin – Pabellón Yoo, DWM",
     subtitle: "Design Week México 2020",
     description:
       "En 2020, Lucila Aguilar fue homenajeada en Design Week México con el Pabellón Yoo, un refugio que invita a reconectar con la tierra mediante materiales naturales.",
@@ -174,7 +174,7 @@ export const publicationsData: Publication[] = [
   {
     id: "best-bamboo-social-housing",
     slug: "best-bamboo-social-housing",
-    title: "The Best Bamboo – Bamboo Social Housing",
+    title: "The Best Bamboo – Bamboo social housing",
     subtitle: "Vivienda social sustentable",
     description:
       "El proyecto comenzó como una propuesta de vivienda social que gestiona Uumbal para sus trabajadores de campo. Uumbal es una empresa agroforestal con 15,000 hectáreas de plantaciones de pino y palma en el sureste de México -Chiapas, Veracruz, Tabasco y Campeche.",
@@ -184,7 +184,7 @@ export const publicationsData: Publication[] = [
   {
     id: "green-building-consciousness",
     slug: "green-building-consciousness",
-    title: "Green – Building with Consciousness",
+    title: "Green – Building with consciousness",
     subtitle: "Arquitectura consciente",
     description:
       "Crece tu Casa es una propuesta de Vivienda Social Sustentable que busca ser catalizador de cambio e inspiración proponiendo un esquema que difunde bienestar y promueve conciencia social y ambiental en sus habitantes y sus comunidades.",
@@ -194,7 +194,7 @@ export const publicationsData: Publication[] = [
   {
     id: "archdaily-manual-construccion-bambu",
     slug: "archdaily-manual-construccion-bambu",
-    title: "ArchDaily – Manual de construcción en bambú",
+    title: "Archdaily – Manual de construcción en bambú",
     subtitle: "Guía técnica de construcción",
     description:
       "El bambú es un material constructivo que se ha utilizado desde la antigüedad en distintas edificaciones que han demostrado su superioridad frente a materiales completamente innovadores como el plástico y el acero debido a un sinnúmero de bondades, sin olvidar el factor estético incomparable que lo ha colocado como una de las mayores tendencias arquitectónicas del momento.",
@@ -204,7 +204,7 @@ export const publicationsData: Publication[] = [
   {
     id: "archdaily-crece-tu-casa",
     slug: "archdaily-crece-tu-casa",
-    title: "ArchDaily – Crece tu casa",
+    title: "Archdaily – Crece tu casa",
     subtitle: "Proyecto de vivienda social",
     description:
       "Por medio de un modelo replicable, modular, adaptable, fácil de construir y accesible, se propone promover la transferencia de tecnologías e impulsar la economía local, mejorando la calidad de vida y el equilibrio con el contexto natural y cultural de las comunidades.",
@@ -225,7 +225,7 @@ export const publicationsData: Publication[] = [
   {
     id: "archdaily-la-ceiba",
     slug: "archdaily-la-ceiba",
-    title: "ArchDaily – La Ceiba",
+    title: "Archdaily – La Ceiba",
     subtitle: "Infraestructura sustentable",
     description:
       '"La Ceiba" es un proyecto de infraestructura para Uumbal que integra diseño sustentable y materiales de bajo impacto en 16 construcciones replicables, alineadas con certificaciones ambientales internacionales.',

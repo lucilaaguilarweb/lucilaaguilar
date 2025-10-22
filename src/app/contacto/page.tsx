@@ -34,7 +34,7 @@ export default function Contacto() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative md:h-[70vh] h-[60vh] flex items-center justify-center bg-gray-100 pt-20">
+      <section className="relative md:h-[70vh] h-[60vh] flex items-center justify-center bg-gray-100 pt-20 mt-8">
         <div className="text-center z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-normal text-black mb-8 font-baskervville">
             CONTACTO

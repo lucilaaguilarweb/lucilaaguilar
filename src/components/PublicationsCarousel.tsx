@@ -64,7 +64,7 @@ export default function PublicationsCarousel() {
       <div className="flex md:flex-row flex-col md:justify-between justify-start md:items-center items-start mb-6 gap-4">
         <div className="flex md:flex-row flex-col md:gap-8 gap-2">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville text-left">
-            IMPRESAS
+            Impresas
           </h2>
           {/* Publication Selector */}
           <div className="flex-1 max-w-xs">

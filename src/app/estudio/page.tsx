@@ -10,7 +10,7 @@ export default function Estudio() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[90vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto">
+      <section className="relative lg:h-[90vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-56 max-w-[1440px] mx-auto mt-8">
         <div className="absolute inset-8 overflow-hidden mt-6">
           <Image
             src="/images/estudio-1.jpg"
@@ -27,9 +27,9 @@ export default function Estudio() {
             priority
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-40">
+        <div className="lg:relative absolute z-10 lg:max-w-sm w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-40">
           <h1 className="text-2xl md:text-4xl font-normal text-black mb-6 font-baskervville drop-shadow-lg">
-            UN ENFOQUE CONSCIENTE EN LA ARQUITECTURA
+            Un enfoque consciente en la arquitectura
           </h1>
           <p className="text-lg text-black mb-4 drop-shadow-md">
             Diseñamos y construimos una arquitectura que nace de la tierra y
@@ -42,7 +42,7 @@ export default function Estudio() {
       <section className="md:pb-20 pb-8 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
-            ESTUDIO
+            Estudio
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Lucila Aguilar y Esteve Arquitectos es una firma dedicada a
@@ -66,7 +66,7 @@ export default function Estudio() {
         </div>
         <div className="relative md:w-1/2 w-full md:pl-16">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville">
-            NUESTRO MANIFIESTO
+            Nuestro manifiesto
           </h2>
           <p className="text-lg text-gray-500 mb-12 uppercase mt-1">
             Arquitectura al servicio de la tierra.
@@ -134,7 +134,7 @@ export default function Estudio() {
               />
             </div>
             <h3 className="text-2xl font-normal text-gray-900 mb-4 font-baskervville">
-              LUCILA AGUILAR
+              Lucila Aguilar
             </h3>
             <p className="text-gray-700 mb-6">
               Lucila Aguilar de la Lama es arquitecta por la Universidad
@@ -158,7 +158,7 @@ export default function Estudio() {
               />
             </div>
             <h3 className="text-2xl font-normal text-gray-900 mb-4 font-baskervville">
-              JORGE ESTEVE AGUILAR
+              Jorge Esteve Aguilar
             </h3>
             <p className="text-gray-700 mb-6">
               Jorge Esteve Aguilar es arquitecto por la Universidad
@@ -180,7 +180,7 @@ export default function Estudio() {
       {/* Studio Timeline Accordion */}
       <Accordion
         items={studioTimelineData}
-        title="UNA HISTORIA DE INNOVACIÓN Y RECONOCIMIENTO"
+        title="Una historia de innovación y reconocimiento"
         subtitle="Desde nuestros inicios, hemos participado en proyectos, exposiciones y premios que nos han llevado de México al mundo. Esta es una mirada a algunos de nuestros hitos."
       />
 

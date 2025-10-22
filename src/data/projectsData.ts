@@ -19,9 +19,12 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  // COCOON PROJECT - TEMPORARILY REMOVED (Data preserved for future use)
+  // Uncomment the following block to restore the Cocoon project
+  /*
   {
     slug: "cocoon",
-    title: "COCOON",
+    title: "Cocoon",
     subtitle: "Vivienda Modular Sustentable",
     description:
       "Vivir en la naturaleza, sin renunciar al confort. Estructuras elegantes y de bajo impacto que ofrecen comodidad sin concesiones y belleza sin destrucción.",
@@ -44,7 +47,7 @@ export const projectsData: Project[] = [
       },
       {
         year: "2025",
-        title: "LOFT PUBLICATIONS",
+        title: "Loft Publications",
         description: "",
         imageFile: "LOFT.png",
       },
@@ -71,9 +74,10 @@ Con aislamiento térmico y acústico, el Cocoon mantiene interiores frescos en c
 Una filosofía regenerativa
 Más que un edificio, el Cocoon es una forma de vida sostenible. Su diseño minimiza el impacto ambiental, maximiza la adaptabilidad y demuestra que la arquitectura puede ser moderna, sustentable y profundamente humana.`,
   },
+  */
   {
     slug: "pericos",
-    title: "PERICOS",
+    title: "Pericos",
     subtitle: "Arquitectura que dialoga con el cacao y la selva",
     description:
       "Un conjunto de 5 módulos con 9 habitaciones que miran hacia el volcán Tacaná y se integran de manera orgánica con el paisaje de la Finca Don Jorge.",
@@ -84,7 +88,7 @@ Más que un edificio, el Cocoon es una forma de vida sostenible. Su diseño mini
     awards: [
       {
         year: "2023",
-        title: "LOFT PUBLICATIONS",
+        title: "Loft Publications",
         description: "Down to Earth - Rammed Earth Architecture",
         imageFile: "LOFT.png",
       },
@@ -105,7 +109,7 @@ Viviendas Pericos refleja la visión de Lucila Aguilar Arquitectos: demostrar qu
   },
   {
     slug: "pabellon-semilla",
-    title: "PABELLÓN SEMILLA",
+    title: "Pabellón Semilla",
     subtitle: "Arquitectura que germina desde la tierra del cacao",
     description:
       "Ubicado en la región del Soconusco, Chiapas, bajo la sombra del Volcán Tacaná, da la bienvenida a visitantes y trabajadores de la Finca de Cacao Don Jorge.",
@@ -138,7 +142,7 @@ Construido con la participación de la comunidad y trabajadores de la finca, el 
   },
   {
     slug: "finca-don-jorge",
-    title: "FINCA DON JORGE",
+    title: "Finca Don Jorge",
     subtitle: "Arquitectura sustentable al servicio del cacao y la comunidad",
     description:
       "Ubicada en el corazón del Soconusco, a 23 km de Tapachula, Chiapas, es un proyecto de ECOM cuyo propósito es rescatar el cacao blanco criollo, una de las variedades más valiosas de México.",
@@ -186,7 +190,7 @@ Cada proyecto, desde un dormitorio hasta un pabellón de encuentro, está pensad
   },
   {
     slug: "humanitree",
-    title: "HUMANITREE",
+    title: "Humanitree",
     subtitle: "Un espacio lúdico que fusiona aprendizaje, juego y diseño",
     description:
       "En colaboración con C Cúbica Arquitectos, una estructura de bambú que transforma el vacío de tres niveles en una gran instalación lúdica con dos cocoons que se entrelazan con redes de paracord.",
@@ -210,7 +214,7 @@ El resultado es un entorno que integra juego, aprendizaje y naturaleza en un mis
   },
   {
     slug: "la-ceiba",
-    title: "LA CEIBA",
+    title: "La Ceiba",
     subtitle: "Infraestructura sostenible para dignificar el campo mexicano",
     description:
       "Desarrollado para Uumbal, empresa agroforestal del sureste mexicano, el proyecto incluye 16 prototipos replicables que resuelven necesidades de seguridad y operación con bajo impacto ambiental y alta calidad estética.",
@@ -227,7 +231,7 @@ El resultado es un entorno que integra juego, aprendizaje y naturaleza en un mis
       },
       {
         year: "2021",
-        title: "LOFT PUBLICATIONS",
+        title: "Loft Publications",
         description: "Green Architecture for a Sustainable Future",
         imageFile: "LOFT.png",
       },
@@ -251,7 +255,7 @@ Prototipos constructivos
   },
   {
     slug: "crece-tu-casa",
-    title: "CRECE TU CASA",
+    title: "Crece tu Casa",
     subtitle: "Vivienda social sustentable, modular y digna",
     description:
       "Un modelo de vivienda social sustentable que busca inspirar y generar cambio. Rescata la esencia de la arquitectura tradicional mexicana, aportando belleza, color y alegría, mientras promueve bienestar y dignidad en las comunidades.",
@@ -306,7 +310,7 @@ Cada prototipo integra bambú como estructura principal, acompañado de distinto
   },
   {
     slug: "crece-tu-escuela",
-    title: "CRECE TU ESCUELA",
+    title: "Crece tu Escuela",
     subtitle: "Un aula hecha con manos, bambú y comunidad",
     description:
       "Nació como un esfuerzo colectivo en Unión Mexicana, Chiapas, para crear un espacio educativo digno y sustentable. Más que un edificio, es un punto de encuentro para el aprendizaje, la convivencia y el desarrollo de toda la comunidad.",
@@ -347,7 +351,7 @@ Crece tu Escuela demostró que la educación puede crecer desde la comunidad mis
   },
   {
     slug: "ixua",
-    title: "IXUA – BARRIO PALENQUE",
+    title: "Ixua – Barrio Palenque",
     subtitle: "Un barrio sustentable tejido con bambú y selva",
     description:
       "En colaboración con Fonatur, diseñamos un proyecto que forma parte de la ruta del Tren Maya: un barrio construido casi por completo en bambú, donde la arquitectura y la naturaleza se entrelazan.",
@@ -393,7 +397,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
   },
   {
     slug: "oficinas-uumbal",
-    title: "OFICINAS UUMBAL",
+    title: "Oficinas Uumbal",
     subtitle: "Oficinas sustentables en el corazón de la industria",
     description:
       'Diseñadas para Uumbal, las oficinas ubicadas en Chiapas, dentro de una planta extractora de aceite de palma, retoman la intención sustentable y el diseño bioclimático del proyecto "La Ceiba".',
@@ -405,7 +409,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
   },
   {
     slug: "tolsa",
-    title: "TOLSÁ",
+    title: "Tolsá",
     subtitle: "Una casa serena en la Ciudad de México",
     description:
       "Rodeada de jardines de encinos y magnolias, esta casa en la Ciudad de México recibe con una atmósfera serena y contemplativa. Una escalinata de piedra labrada en espiral evoca la forma de un caracol.",
@@ -417,7 +421,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
   },
   {
     slug: "casa-valle",
-    title: "CASA VALLE",
+    title: "Casa Valle",
     subtitle: "Remodelación de una casa icónica en Valle de Bravo",
     description:
       'Diseñada por el arquitecto Víctor de la Lama en 1962, y ubicada en Valle de Bravo, las casas del conjunto "La Balsa" se caracterizan por su estructura en forma de "A" con fachadas de vidrio orientadas al lago.',
@@ -429,7 +433,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
   },
   {
     slug: "jardin-de-la-diosa",
-    title: "JARDÍN DE LA DIOSA",
+    title: "Jardín de la Diosa",
     subtitle: "Pabellón de Bambú Contemplativo",
     description:
       "Ubicado en Salazar, dentro de un jardín boscoso, establece una conexión fluida con su entorno gracias a sus fachadas de vidrio sin marcos, que permiten una integración visual total con la naturaleza.",
@@ -441,7 +445,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
   },
   {
     slug: "orquideario",
-    title: "ORQUIDEARIO",
+    title: "Orquideario",
     subtitle: "Un ícono verde en el corazón de la Ciudad de México",
     description:
       "Los invernaderos nacieron para proteger a las plantas, pero paradójicamente dieron nombre al efecto invernadero. Este proyecto buscó retar esa paradoja: crear un invernadero sustentable hecho de bambú en el Jardín Botánico de Chapultepec.",
@@ -467,7 +471,7 @@ Hoy, este invernadero funciona como orquideario en el Jardín Botánico. Es un e
   },
   {
     slug: "gst-library-proyecto",
-    title: "GST LIBRARY",
+    title: "Gst Library",
     subtitle: "Santuario Contemplativo para Niños",
     description:
       "Una de las 64 estructuras de bambú que conforman Green School Tulum, un proyecto educativo dedicado a formar a los líderes verdes del futuro. Ubicada al final del recorrido principal como un santuario contemplativo.",
@@ -483,7 +487,7 @@ El susurro del agua, la luz filtrada entre el bambú y la vegetación que envuel
   },
   {
     slug: "loto",
-    title: "LOTO - PABELLÓN FLOTANTE",
+    title: "Loto - Pabellón Flotante",
     subtitle: "Un pabellón monumental de bambú inspirado en la naturaleza",
     description:
       "Una estructura única en el mundo por su escala e ingeniería. Su diseño de bambú permite un gran espacio sin columnas intermedias, flexible y lleno de belleza, pensado para albergar todo tipo de eventos.",
@@ -507,12 +511,12 @@ Loto demuestra que el bambú no es solo un material sustentable, sino también r
   },
   {
     slug: "refugio-oajtl-cca-chapultepec",
-    title: "REFUGIO OAJTL - CCA CHAPULTEPEC",
+    title: "Refugio Oajtl - CCA Chapultepec",
     subtitle: "Un museo natural en el corazón del bosque",
     description:
       "Este proyecto propone un espacio que celebra la relación entre las especies naturales y el ser humano, recordándonos que La Tierra es nuestro refugio más esencial.",
     year: "2023",
-    coverImage: "refugio-oajtl-portada.jpg",
+    coverImage: "refugio-oajtl-general-04.jpg",
     folderPath: "refugio-oajtl-cca-chapultepec",
     category: "publico",
     content: `Un museo natural en el corazón del bosque

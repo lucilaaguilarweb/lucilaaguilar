@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import useScrollAnimation from "@/components/useScrollAnimation";
+// import useScrollAnimation from "@/components/useScrollAnimation"; // Disabled animation
 import { projectsData } from "@/data/projectsData";
 
 export default function Proyectos() {
@@ -40,15 +40,15 @@ export default function Proyectos() {
     }
   }, []);
 
-  // Initialize scroll animation (desktop only)
-  useScrollAnimation(projectsContainerRef, {
-    zoomOutValue: 0.95,
-    zoomOutDuration: 0.04,
-    zoomInDuration: 0.9,
-    zoomOutEase: "power3.inOut",
-    zoomInEase: "sine.inOut",
-    enabled: !isMobile,
-  });
+  // Initialize scroll animation (desktop only) - DISABLED
+  // useScrollAnimation(projectsContainerRef, {
+  //   zoomOutValue: 0.95,
+  //   zoomOutDuration: 0.04,
+  //   zoomInDuration: 0.9,
+  //   zoomOutEase: "power3.inOut",
+  //   zoomInEase: "sine.inOut",
+  //   enabled: !isMobile,
+  // });
 
   const toggleProject = (projectId: string) => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
@@ -59,7 +59,7 @@ export default function Proyectos() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gray-100">
+      <section className="relative h-[70vh] flex items-center justify-center bg-gray-100 mt-8">
         <div className="relative w-full h-full">
           <Image
             src="/images/proyectos/pericos/pericos-01.jpg"
@@ -70,10 +70,10 @@ export default function Proyectos() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white z-10 px-4">
+          <div className="absolute inset-0 flex items-center justify-left md:px-32">
+            <div className="text-left text-white z-10 px-4">
               <h1 className="text-5xl md:text-7xl font-normal mb-6 font-baskervville">
-                PROYECTOS
+                Proyectos
               </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
                 Arquitectura que regenera y conecta

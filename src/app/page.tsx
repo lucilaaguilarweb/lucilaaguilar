@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { timelineData } from "@/data/timelineData";
@@ -56,7 +57,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-96 max-w-[1440px] mx-auto">
+      <section className="relative lg:h-[95vh] md:h-[80vh] h-[70vh] max-h-[700px] flex items-center p-8 lg:mb-0 mb-96 max-w-[1440px] mx-auto mt-8">
         <div
           ref={imageRef}
           className="absolute inset-8 overflow-hidden mt-6"
@@ -70,14 +71,19 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="lg:relative absolute z-10 lg:max-w-lg w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-88">
+        <div className="lg:relative absolute z-10 lg:max-w-sm w-11/12 lg:ml-auto lg:mr-8 mr-0 lg:left-auto lg:transform-none left-1/2 transform lg:translate-x-0 -translate-x-1/2 bg-white/60 backdrop-blur-md p-8 shadow-2xl lg:h-full flex flex-col justify-end lg:bottom-auto -bottom-88">
           <h1 className="text-3xl md:text-5xl font-normal text-black md:mb-6 mb-4 font-baskervville drop-shadow-lg">
-            ARQUITECTURA QUE SANA Y CONECTA
+            Arquitectura que sana y conecta
           </h1>
           <p className="text-lg text-black mb-4 drop-shadow-md">
             Espacios vivos que inspiran, conectan y respiran con la naturaleza
           </p>
-          <a>Ver proyectos</a>
+          <Link
+            href="/proyectos"
+            className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
+          >
+            Ver proyectos
+          </Link>
           <div className="flex gap-4 mt-8">
             <div className="relative w-24 h-24">
               <Image
@@ -108,7 +114,7 @@ export default function Home() {
         </div>
         <div className="max-w-4xl md:mb-16 mb-0">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
-            ARQUITECTURA AL SERVICIO DE LA TIERRA
+            Arquitectura al servicio de la Tierra
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Somos un despacho en la Ciudad de México que imagina y construye
@@ -117,12 +123,12 @@ export default function Home() {
             forma en que habitamos, conectándonos de nuevo con la Tierra y entre
             nosotros.
           </p>
-          <a
-            href="#"
-            className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+          <Link
+            href="/estudio"
+            className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
           >
-            CONOCE EL ESTUDIO
-          </a>
+            Conoce el estudio
+          </Link>
         </div>
       </section>
 
@@ -165,12 +171,12 @@ export default function Home() {
             diseñado para la hotelería y el ecoturismo. Montable, desmontable y
             en armonía con el paisaje.
           </p>
-          <a
-            href="#"
-            className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+          <Link
+            href="/cocoon-project"
+            className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
           >
             VER MÁS
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -224,7 +230,7 @@ export default function Home() {
       {/* Bamboo Architecture Section */}
       <section className="md:py-20 py-8 bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-12 font-baskervville md:text-right text-left">
-          BAMBÚ: NATURALEZA HECHA ARQUITECTURA
+          Bambú: naturaleza hecha arquitectura
         </h2>
         <div className="flex flex-col">
           <div
@@ -248,12 +254,12 @@ export default function Home() {
                 y orgánicas que regeneran el entorno y fomentan economías
                 locales.
               </p>
-              <a
-                href="#"
-                className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+              <Link
+                href="/bambu"
+                className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
               >
                 VER MÁS
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -263,16 +269,16 @@ export default function Home() {
       <section className="md:py-20 py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 md:text-center text-left">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-8 font-baskervville">
-            PROYECTOS QUE INSPIRAN Y REGENERAN
+            Proyectos que inspiran y regeneran
           </h2>
-          <a
-            href="#"
-            className="text-gray-900 font-semibold underline hover:no-underline transition-all mb-12 inline-block"
+          <Link
+            href="/proyectos"
+            className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
           >
             VER MÁS
-          </a>
+          </Link>
 
-          <div className="flex md:flex-row flex-col gap-8">
+          <div className="flex md:flex-row flex-col gap-8 mt-12">
             {/* Humanitrek Caucasio Project */}
             <div className="text-left">
               <div
@@ -288,18 +294,18 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-2xl font-normal text-gray-900 mb-4 font-baskervville">
-                HUMANITREK CAUCASO
+                Humanitree Caucaso
               </h3>
               <p className="text-gray-700 mb-6">
                 Proyecto que integra arquitectura, juego y aprendizaje mediante
                 cocoons de bambú y paracord en tres niveles temáticos.
               </p>
-              <a
-                href="#"
-                className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+              <Link
+                href="/proyectos/humanitree"
+                className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
               >
                 EXPLORAR
-              </a>
+              </Link>
             </div>
 
             {/* Pabellón Semilla Project */}
@@ -317,18 +323,18 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-2xl font-normal text-gray-900 mb-4 font-baskervville">
-                PABELLÓN SEMILLA
+                Pabellón Semilla
               </h3>
               <p className="text-gray-700 mb-6">
                 Espacio icónico que dignifica el trabajo del cacao y la
                 comunidad que lo cultiva.
               </p>
-              <a
-                href="#"
-                className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+              <Link
+                href="/proyectos/pabellon-semilla"
+                className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
               >
                 EXPLORAR
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -338,7 +344,7 @@ export default function Home() {
       <section className="py-20 bg-black text-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-normal mb-8 font-baskervville max-w-2xl">
-            UNA HISTORIA DE INNOVACIÓN Y RECONOCIMIENTO
+            Una historia de innovación y reconocimiento
           </h2>
           <p className="text-lg mb-12 max-w-2xl">
             Desde nuestros inicios, hemos participado en proyectos, exposiciones
@@ -406,31 +412,31 @@ export default function Home() {
             className="relative md:w-5/12 w-full h-[600px]"
             style={{ clipPath: "inset(80px)" }}
           >
-          <Image
-            src="/images/section6-1.png"
-            alt="Magazine cover"
-            fill
-            className="object-contain rounded-lg"
-          />
-        </div>
+            <Image
+              src="/images/section6-1.png"
+              alt="Magazine cover"
+              fill
+              className="object-contain rounded-lg"
+            />
+          </div>
 
-        <div className="md:w-7/12 w-full">
-          <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
-            IDEAS QUE VIAJAN Y TRASCIENDEN
-          </h2>
-          <p className="text-lg text-gray-700 mb-8">
+          <div className="md:w-7/12 w-full">
+            <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6 font-baskervville">
+              Ideas que viajan y trascienden
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
               Nuestros proyectos han sido parte de bienales, exposiciones y
               medios internacionales como Green Architecture for a sustainable
               future, ⁠Down to Earth, ⁠XIII Bienal de La Habana y Time Space
               Existence 2021 y 2025. Publicamos manuales y recursos para
               inspirar y compartir soluciones sostenibles con el mundo.
-          </p>
-          <a
-            href="#"
-            className="text-gray-900 font-semibold underline hover:no-underline transition-all"
-          >
-            VER MEDIOS
-          </a>
+            </p>
+            <a
+              href="#"
+              className="text-gray-900 font-semibold underline hover:no-underline transition-all"
+            >
+              VER MEDIOS
+            </a>
           </div>
         </div>
       </section>
