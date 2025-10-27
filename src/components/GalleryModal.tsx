@@ -105,15 +105,15 @@ export default function GalleryModal({
 
       {/* Main content */}
       <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12">
-        {/* Previous button */}
+        {/* Previous button 
         {images.length > 1 && (
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-900 p-3 rounded-full shadow-lg transition-all z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent text-gray-900 p-3 rounded-full transition-all z-10"
             aria-label="Previous image"
           >
             <svg
-              className="w-6 h-6"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -126,7 +126,7 @@ export default function GalleryModal({
               />
             </svg>
           </button>
-        )}
+        )}*/}
 
         {/* Image */}
         <div className="relative w-full h-full flex items-center justify-center">
@@ -141,15 +141,15 @@ export default function GalleryModal({
           />
         </div>
 
-        {/* Next button */}
+        {/* Next button 
         {images.length > 1 && (
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 hover:bg-gray-200 text-gray-900 p-3 rounded-full shadow-lg transition-all z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-900 p-3 rounded-full transition-all z-10 bg-transparent"
             aria-label="Next image"
           >
             <svg
-              className="w-6 h-6"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -162,7 +162,7 @@ export default function GalleryModal({
               />
             </svg>
           </button>
-        )}
+        )}*/}
       </div>
 
       {/* Thumbnail strip (optional, for many images) */}

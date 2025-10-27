@@ -13,11 +13,27 @@ export default function ProjectDetailPage() {
   const slug = params.slug as string;
   const project = projectsData.find((p) => p.slug === slug);
 
+  // Helper function to get collaboration image file
+  const getCollaborationImage = (collaboration: string): string | null => {
+    const mapping: { [key: string]: string } = {
+      "Atelier One": "atelier-one.jpg",
+      "C- Cúbica": "c-cubica.jpeg",
+      Cúbica: "c-cubica.jpeg",
+      "Jörg Stamm": "jorg-stamm.jpeg",
+    };
+    return mapping[collaboration] || null;
+  };
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [projectImages, setProjectImages] = useState<
     Array<{ filename: string; alt: string }>
   >([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [mouseStart, setMouseStart] = useState(0);
+  const [mouseEnd, setMouseEnd] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     if (project) {
@@ -40,6 +56,20 @@ export default function ProjectDetailPage() {
     }
   }, [project]);
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        prevImage();
+      } else if (e.key === "ArrowRight") {
+        nextImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentImageIndex, projectImages.length]);
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
   };
@@ -48,6 +78,62 @@ export default function ProjectDetailPage() {
     setCurrentImageIndex(
       (prev) => (prev - 1 + projectImages.length) % projectImages.length
     );
+  };
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swiped left
+      nextImage();
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swiped right
+      prevImage();
+    }
+  };
+
+  // Mouse handlers for drag
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    setMouseStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      e.preventDefault();
+      setMouseEnd(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      if (mouseStart - mouseEnd > 75) {
+        // Dragged left
+        nextImage();
+      }
+
+      if (mouseStart - mouseEnd < -75) {
+        // Dragged right
+        prevImage();
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
   };
 
   if (!project) {
@@ -66,7 +152,16 @@ export default function ProjectDetailPage() {
       <main className="flex flex-col md:flex-row">
         {/* Left Side: Image Carousel (70%) */}
         <div className="w-full lg:w-[60%] md:w-[50%] bg-gray-100 h-[600px] md:h-screen md:sticky md:top-0 mt-16">
-          <div className="relative w-full h-full p-4 md:p-8">
+          <div
+            className="relative w-full h-full p-4 md:p-8 cursor-grab active:cursor-grabbing select-none"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+          >
             {isLoading ? (
               <div className="absolute inset-0 flex items-center justify-center h-full">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
@@ -77,14 +172,16 @@ export default function ProjectDetailPage() {
                   src={`/images/proyectos/${project.folderPath}/${projectImages[currentImageIndex]?.filename}`}
                   alt={`${project.title} - Image ${currentImageIndex + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover pointer-events-none"
                   sizes="(max-width: 768px) 100vw, 70vw"
                   priority
+                  draggable={false}
                 />
 
                 {/* Carousel Controls */}
                 {projectImages.length > 1 && (
                   <>
+                    {/* 
                     <button
                       onClick={prevImage}
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200"
@@ -122,10 +219,22 @@ export default function ProjectDetailPage() {
                         />
                       </svg>
                     </button>
+                    */}
 
-                    {/* Image Counter */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
-                      {currentImageIndex + 1} / {projectImages.length}
+                    {/* Dot Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 pointer-events-auto">
+                      {projectImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                            index === currentImageIndex
+                              ? "bg-white"
+                              : "bg-white/50"
+                          }`}
+                          aria-label={`Go to image ${index + 1}`}
+                        />
+                      ))}
                     </div>
                   </>
                 )}
@@ -158,7 +267,7 @@ export default function ProjectDetailPage() {
           </Link>
 
           {/* Project Header */}
-          <div className="mb-8">
+          <div className="mb-4">
             <h1 className="text-4xl md:text-5xl font-normal mb-4 font-baskervville">
               {project.title}
             </h1>
@@ -168,6 +277,28 @@ export default function ProjectDetailPage() {
             <p className="text-sm text-gray-500 uppercase tracking-wider">
               {project.year}
             </p>
+            {project.collaboration &&
+              getCollaborationImage(project.collaboration) && (
+                <div className="mt-4">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">
+                    Colaboración
+                  </p>
+                  <div
+                    className="relative w-32 h-24 grayscale hover:grayscale-0 transition-all duration-300"
+                    title={project.collaboration}
+                  >
+                    <Image
+                      src={`/images/colaboration/${getCollaborationImage(
+                        project.collaboration
+                      )}`}
+                      alt={`Colaboración: ${project.collaboration}`}
+                      fill
+                      className="object-contain"
+                      sizes="128px"
+                    />
+                  </div>
+                </div>
+              )}
           </div>
 
           {/* Project Content */}

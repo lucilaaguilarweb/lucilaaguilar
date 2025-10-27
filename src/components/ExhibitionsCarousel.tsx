@@ -9,8 +9,10 @@ export default function ExhibitionsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Use exhibitions data directly
-  const exhibitionPublications = exhibitionsData;
+  // Sort exhibitions by year in descending order (most recent first)
+  const exhibitionPublications = [...exhibitionsData].sort(
+    (a, b) => parseInt(b.year) - parseInt(a.year)
+  );
 
   // Responsive items per page based on screen size
   useEffect(() => {

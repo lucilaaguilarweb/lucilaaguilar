@@ -15,6 +15,17 @@ export default function Proyectos() {
   // Check if mobile (disable animations on mobile)
   const [isMobile, setIsMobile] = useState(false);
 
+  // Helper function to get collaboration image file
+  const getCollaborationImage = (collaboration: string): string | null => {
+    const mapping: { [key: string]: string } = {
+      "Atelier One": "atelier-one.jpg",
+      "C- Cúbica": "c-cubica.jpeg",
+      Cúbica: "c-cubica.jpeg",
+      "Jörg Stamm": "jorg-stamm.jpeg",
+    };
+    return mapping[collaboration] || null;
+  };
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -121,7 +132,7 @@ export default function Proyectos() {
                         ).map((award, index) => (
                           <div
                             key={index}
-                            className="relative w-12 h-12 grayscale hover:grayscale-0 transition-all duration-300"
+                            className="relative w-16 h-16 grayscale hover:grayscale-0 transition-all duration-300"
                             title={`${award.title} - ${award.year}`}
                           >
                             <Image
@@ -129,12 +140,32 @@ export default function Proyectos() {
                               alt={award.title}
                               fill
                               className="object-contain"
-                              sizes="48px"
+                              sizes="64px"
                             />
                           </div>
                         ))}
                       </div>
                     )}
+                    {/* Collaboration logo */}
+                    {project.collaboration &&
+                      getCollaborationImage(project.collaboration) && (
+                        <div className="flex mt-2">
+                          <div
+                            className="relative w-20 h-20 grayscale hover:grayscale-0 transition-all duration-300"
+                            title={`Colaboración: ${project.collaboration}`}
+                          >
+                            <Image
+                              src={`/images/colaboration/${getCollaborationImage(
+                                project.collaboration
+                              )}`}
+                              alt={`Colaboración: ${project.collaboration}`}
+                              fill
+                              className="object-contain"
+                              sizes="80px"
+                            />
+                          </div>
+                        </div>
+                      )}
                   </div>
 
                   {/* Image - Full width, always same size */}
@@ -222,7 +253,7 @@ export default function Proyectos() {
                         ).map((award, index) => (
                           <div
                             key={index}
-                            className="relative w-12 h-12 grayscale hover:grayscale-0 transition-all duration-300"
+                            className="relative w-16 h-16 grayscale hover:grayscale-0 transition-all duration-300"
                             title={`${award.title} - ${award.year}`}
                           >
                             <Image
@@ -230,12 +261,32 @@ export default function Proyectos() {
                               alt={award.title}
                               fill
                               className="object-contain"
-                              sizes="48px"
+                              sizes="64px"
                             />
                           </div>
                         ))}
                       </div>
                     )}
+                    {/* Collaboration logo */}
+                    {project.collaboration &&
+                      getCollaborationImage(project.collaboration) && (
+                        <div className="flex justify-end mt-2">
+                          <div
+                            className="relative w-20 h-20 grayscale hover:grayscale-0 transition-all duration-300"
+                            title={`Colaboración: ${project.collaboration}`}
+                          >
+                            <Image
+                              src={`/images/colaboration/${getCollaborationImage(
+                                project.collaboration
+                              )}`}
+                              alt={`Colaboración: ${project.collaboration}`}
+                              fill
+                              className="object-contain"
+                              sizes="80px"
+                            />
+                          </div>
+                        </div>
+                      )}
                   </div>
 
                   {/* Center: Image */}

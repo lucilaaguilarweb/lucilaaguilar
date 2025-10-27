@@ -55,7 +55,7 @@ export default function Estudio() {
       </section>
 
       {/* Manifesto Section */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 mb-12 items-end">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 mb-12">
         <div className="relative md:h-[720px] h-96 md:w-1/2 w-full">
           <Image
             src="/images/estudio-2.jpg"

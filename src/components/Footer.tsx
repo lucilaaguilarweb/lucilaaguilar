@@ -17,39 +17,6 @@ export default function Footer() {
 
           <div className="space-y-6">
             <div>
-              <h4 className="text-lg font-normal mb-4 font-baskervville">
-                Contacto
-              </h4>
-              <div className="space-y-4">
-                <a
-                  href="mailto:lucila@lucilaaguilar.com"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors !normal-case !no-underline"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                  <span>lucila@lucilaaguilar.com</span>
-                </a>
-                <a
-                  href="mailto:jorge@lucilaaguilar.com"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors !normal-case !no-underline"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                  <span>jorge@lucilaaguilar.com</span>
-                </a>
-              </div>
               <h4 className="text-lg font-normal mb-4 font-baskervville mt-8">
                 Contacto
               </h4>
@@ -122,15 +89,15 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex space-x-4 mb-4 md:mb-0">
               <a
-                href="https://pinterest.com"
+                href=" https://www.instagram.com/lucilaarq/?hl=es-la"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-black"
               >
-                <Icon icon="mdi:pinterest" className="w-6 h-6" />
+                <Icon icon="mdi:instagram" className="w-6 h-6" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/lucilarq/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-black"

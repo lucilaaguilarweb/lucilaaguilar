@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CocoonGalleryModal from "@/components/CocoonGalleryModal";
+import Link from "next/link";
 
 export default function CocoonProject() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function CocoonProject() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative lg:h-[140vh] md:h-[90vh] h-[70vh] flex items-center p-8 lg:mb-40 mb-56  mx-auto mt-8">
+      <section className="relative lg:h-[140vh] md:h-[90vh] h-[70vh] flex items-center p-8 lg:mb-0 mb-0  mx-auto mt-8">
         <div className="absolute inset-8 overflow-hidden mt-6">
           <Image
             src="/images/cocoon-project/cocoon-project-hero.jpg"
@@ -46,15 +47,9 @@ export default function CocoonProject() {
           />
         </div>
         <div className="lg:relative absolute z-10 left-1/2 transform -translate-x-1/2 text-center p-8 lg:h-full flex flex-col top-20 lg:bottom-auto -bottom-40">
-          <h1 className="text-3xl md:text-4xl font-normal text-white mb-2 font-baskervville drop-shadow-lg">
-            The Cocoon - Redefiniendo el lujo
+          <h1 className="text-3xl md:text-5xl font-normal text-white mb-2 font-baskervville drop-shadow-lg">
+            The Cocoon
           </h1>
-          <a
-            href="/contacto"
-            className="text-lg text-white mb-4 drop-shadow-md hover:underline transition-all cursor-pointer"
-          >
-            ‍Comienza tu eco hotel con un concepto ganador.
-          </a>
           <div className="relative w-32 h-32 mx-auto mt-0 ">
             <Image
               src="/images/cocoon-project/icono.png"
@@ -66,8 +61,25 @@ export default function CocoonProject() {
         </div>
       </section>
 
+      <section className="bg-white max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className=" md:mb-16 mb-16">
+          <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-0 font-baskervville">
+            Redefiniendo el lujo
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Comienza tu eco hotel con un concepto ganador.
+          </p>
+          <Link
+            href="/contacto"
+            className="text-black font-semibold underline hover:no-underline transition-all cursor-pointer"
+          >
+            Contáctanos
+          </Link>
+        </div>
+      </section>
+
       {/* Section 1 */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 md:mb-48 mb-16 items-end">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 md:mb-32 mb-16">
         <div className="relative md:h-[720px] h-96 md:w-1/2 w-full">
           <Image
             src="/images/cocoon-project/seccion-1-portada.jpg"
@@ -109,7 +121,7 @@ export default function CocoonProject() {
       </section>
 
       {/* Section 2 */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 mb-16 items-end">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 mb-16">
         <div className="relative md:w-1/2 w-full md:pr-16">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville mb-4">
             Siéntete acocoonado en la naturaleza, vive la experiencia.
@@ -158,7 +170,7 @@ export default function CocoonProject() {
       </section>
 
       {/* Section 3 */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 md:mb-48 mb-16 items-end">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 md:mb-48 mb-16">
         <div className="relative md:h-[720px] h-96 md:w-1/2 w-full">
           <Image
             src="/images/cocoon-project/seccion-3-portada.jpg"
@@ -192,7 +204,7 @@ export default function CocoonProject() {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col gap-8 items-center bg-gray-100 py-32">
         <div className="relative w-full md:w-1/2 md:pl-16">
           <h2 className="text-3xl md:text-4xl font-normal text-gray-900 font-baskervville mb-4">
-            Reconocimientos y Exposiciones.
+            Dejando Huella
           </h2>
           <div className="space-y-6">
             <p className="text-lg text-gray-700">
@@ -245,8 +257,8 @@ export default function CocoonProject() {
             </button>
           </div>
         </div>
-        <div className="relative w-full md:w-1/2 flex flex-col gap-16 items-center">
-          <div className="relative md:w-64 md:h-88 w-40 h-48">
+        <div className="relative w-full md:w-1/2 flex md:flex-col flex-row gap-16 items-center">
+          <div className="relative md:w-40 md:h-56 w-40 h-48">
             <Image
               src="/images/cocoon-project/seccion-4-portada-2.jpg"
               alt="Modern architecture"
@@ -254,7 +266,7 @@ export default function CocoonProject() {
               className="object-cover"
             />
           </div>
-          <div className="relative md:w-64 md:h-64 w-40 h-48">
+          <div className="relative md:w-40 md:h-40 w-40 h-48">
             <Image
               src="/images/cocoon-project/seccion-4-portada.jpg"
               alt="Modern architecture"

@@ -42,57 +42,13 @@ export default function ExhibitionPage({
             <h1 className="text-4xl md:text-5xl font-normal text-gray-900 mb-4 font-baskervville">
               {exhibition.title}
             </h1>
+            {exhibition.slug === "ixua-time-space-existence" && (
+              <p className="text-2xl text-gray-700 font-medium mb-6 font-baskervville">
+                Mención honorífica en Arquitectura
+              </p>
+            )}
             <p className="text-xl text-gray-600 mb-6">{exhibition.subtitle}</p>
-            <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
-              <span className="flex items-center">
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                {exhibition.year}
-              </span>
-              <span className="flex items-center">
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-                EXPOSICIÓN
-              </span>
-              <span className="flex items-center">
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                {images.length} {images.length === 1 ? "imagen" : "imágenes"}
-              </span>
-            </div>
+            <div className="flex items-center justify-center space-x-6 text-sm text-gray-500"></div>
           </div>
         </div>
       </div>

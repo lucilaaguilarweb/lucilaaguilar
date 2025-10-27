@@ -18,6 +18,11 @@ export default function CocoonGalleryModal({
 }: CocoonGalleryModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState<string[]>([]);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [mouseStart, setMouseStart] = useState(0);
+  const [mouseEnd, setMouseEnd] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -73,6 +78,62 @@ export default function CocoonGalleryModal({
     }
   }, [isOpen, handleKeyDown]);
 
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swiped left
+      nextImage();
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swiped right
+      prevImage();
+    }
+  };
+
+  // Mouse handlers for drag
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    setMouseStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      e.preventDefault();
+      setMouseEnd(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      if (mouseStart - mouseEnd > 75) {
+        // Dragged left
+        nextImage();
+      }
+
+      if (mouseStart - mouseEnd < -75) {
+        // Dragged right
+        prevImage();
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -87,7 +148,7 @@ export default function CocoonGalleryModal({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-black hover:text-gray-500 transition-colors"
+          className="absolute top-4 right-4 z-10 text-black hover:text-gray-500 transition-colors pointer-events-auto"
           aria-label="Close modal"
         >
           <svg
@@ -117,15 +178,25 @@ export default function CocoonGalleryModal({
         </div>
 
         {/* Image Container */}
-        <div className="relative flex-1 flex items-center justify-center">
+        <div
+          className="relative flex-1 flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
           {images.length > 0 && (
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full pointer-events-none">
               <Image
                 src={images[currentIndex]}
                 alt={`${sectionTitle} - Image ${currentIndex + 1}`}
                 fill
                 className="object-contain"
                 priority
+                draggable={false}
               />
             </div>
           )}
@@ -133,6 +204,7 @@ export default function CocoonGalleryModal({
           {/* Navigation Arrows */}
           {images.length > 1 && (
             <>
+              {/*
               <button
                 onClick={prevImage}
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-500 transition-colors bg-white bg-opacity-50 rounded-full p-3"
@@ -173,12 +245,13 @@ export default function CocoonGalleryModal({
                   />
                 </svg>
               </button>
+              */}
             </>
           )}
         </div>
 
         {/* Thumbnail Strip */}
-        <div className="mt-4 overflow-x-auto">
+        <div className="mt-4 overflow-x-auto pointer-events-auto">
           <div className="flex gap-2 justify-center min-w-max px-4">
             {images.map((img, idx) => (
               <button
@@ -195,6 +268,7 @@ export default function CocoonGalleryModal({
                   alt={`Thumbnail ${idx + 1}`}
                   fill
                   className="object-cover"
+                  draggable={false}
                 />
               </button>
             ))}

@@ -18,7 +18,7 @@ export const exhibitionsData: Exhibition[] = [
     subtitle: "Conferencia internacional de arquitectura",
     description:
       "Participación en Arch Days CDMX, donde presentamos nuestras innovaciones en arquitectura sustentable y el uso del bambú como material constructivo.",
-    year: "2024",
+    year: "2018",
     coverImage: "/images/exposiciones/arch-days-cdmx/01-archdays-proyecta.jpg",
     folderPath: "arch-days-cdmx",
   },
@@ -29,7 +29,7 @@ export const exhibitionsData: Exhibition[] = [
     subtitle: "Exposición internacional de arquitectura",
     description:
       "Participación en la Bienal de La Habana con el proyecto 'Intersecciones', explorando las conexiones entre arquitectura sustentable y comunidades locales.",
-    year: "2023",
+    year: "2019",
     coverImage:
       "/images/exposiciones/bienal-habana-intersecciones/01-bienal-habana-portada.jpg",
     folderPath: "bienal-habana-intersecciones",
@@ -53,7 +53,7 @@ export const exhibitionsData: Exhibition[] = [
     subtitle: "Exposición UNAM - Homenaje a Víctor de la Lama",
     description:
       "Exposición individual en la UNAM como homenaje a Víctor de la Lama, explorando el linaje creativo en la arquitectura mexicana contemporánea.",
-    year: "2022",
+    year: "2015",
     coverImage: "/images/exposiciones/linaje-creativo/01-linaje-creativo-1.jpg",
     folderPath: "linaje-creativo",
   },
@@ -66,7 +66,7 @@ export const exhibitionsData: Exhibition[] = [
       "Pabellón YOO presentado en Design Week México 2020, donde Lucila Aguilar fue homenajeada por su innovación en materiales sustentables y diseño consciente.",
     year: "2020",
     coverImage:
-      "/images/exposiciones/yoo-design-week-mexico/02-yoo-design-week-2.jpg",
+      "/images/exposiciones/yoo-design-week-mexico/yoo-design-week-08.jpg",
     folderPath: "yoo-design-week-mexico",
     link: "https://www.designweekmexico.com/",
   },

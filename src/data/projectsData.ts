@@ -16,6 +16,7 @@ export interface Project {
   category: "residencial" | "comercial" | "publico" | "exposicion" | "otro";
   content?: string;
   awards?: Award[];
+  collaboration?: string;
 }
 
 export const projectsData: Project[] = [
@@ -32,6 +33,7 @@ export const projectsData: Project[] = [
     coverImage: "cocoon-portada.jpg",
     folderPath: "cocoon",
     category: "residencial",
+    collaboration: "Atelier One",
     awards: [
       {
         year: "2025",
@@ -190,7 +192,7 @@ Cada proyecto, desde un dormitorio hasta un pabellón de encuentro, está pensad
   },
   {
     slug: "humanitree",
-    title: "Humanitree",
+    title: "Cocoon Humanitree",
     subtitle: "Un espacio lúdico que fusiona aprendizaje, juego y diseño",
     description:
       "En colaboración con C Cúbica Arquitectos, una estructura de bambú que transforma el vacío de tres niveles en una gran instalación lúdica con dos cocoons que se entrelazan con redes de paracord.",
@@ -198,6 +200,7 @@ Cada proyecto, desde un dormitorio hasta un pabellón de encuentro, está pensad
     coverImage: "1-portada-humanitree.jpg",
     folderPath: "humanitree",
     category: "publico",
+    collaboration: "C- Cúbica",
     content: `Un espacio lúdico que fusiona aprendizaje, juego y diseño
 En colaboración con C Cúbica Arquitectos, Lucila Aguilar Arquitectos fue invitada a diseñar una estructura de bambú para el nuevo Humanitree School, ubicado en Lomas de Chapultepec, Ciudad de México. El reto: crear un espacio que no solo acompañara el diseño vanguardista de la escuela, sino que también potenciara la creatividad, el juego y la exploración de los estudiantes.
 
@@ -441,6 +444,7 @@ El diseño prioriza al peatón para mejorar la calidad de vida. Calles caminable
     coverImage: "portada-jd-6.jpg",
     folderPath: "jardin-de-la-diosa",
     category: "publico",
+    collaboration: "Jörg Stamm",
     content: `Ubicado en Salazar, dentro de un jardín boscoso, el Pabellón de Bambú establece una conexión fluida con su entorno gracias a sus fachadas de vidrio sin marcos, que permiten una integración visual total con la naturaleza. Este espacio acogedor y contemplativo está diseñado para albergar tanto talleres y clases de bienestar como eventos sociales. En su interior, el juego de luces y sombras proyectadas por los árboles sobre la cubierta se convierte en parte esencial de la experiencia sensorial y contemplativa.`,
   },
   {
@@ -510,8 +514,8 @@ Un mensaje al mundo
 Loto demuestra que el bambú no es solo un material sustentable, sino también resistente, monumental y bello, capaz de transformar la arquitectura a gran escala.`,
   },
   {
-    slug: "refugio-oajtl-cca-chapultepec",
-    title: "Refugio Oajtl - CCA Chapultepec",
+    slug: "refugio-ojtat-cca-chapultepec",
+    title: "Refugio Ojtat - CCA Chapultepec",
     subtitle: "Un museo natural en el corazón del bosque",
     description:
       "Este proyecto propone un espacio que celebra la relación entre las especies naturales y el ser humano, recordándonos que La Tierra es nuestro refugio más esencial.",
@@ -519,6 +523,7 @@ Loto demuestra que el bambú no es solo un material sustentable, sino también r
     coverImage: "refugio-oajtl-general-04.jpg",
     folderPath: "refugio-oajtl-cca-chapultepec",
     category: "publico",
+    collaboration: "C- Cúbica",
     content: `Un museo natural en el corazón del bosque
 Este proyecto propone un espacio que celebra la relación entre las especies naturales y el ser humano, recordándonos que La Tierra es nuestro refugio más esencial.
 
