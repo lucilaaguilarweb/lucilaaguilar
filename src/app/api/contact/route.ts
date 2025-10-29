@@ -18,7 +18,10 @@ export async function POST(request: Request) {
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured");
       return NextResponse.json(
-        { error: "El servicio de correo no está configurado. Por favor contacta al administrador." },
+        {
+          error:
+            "El servicio de correo no está configurado. Por favor contacta al administrador.",
+        },
         { status: 503 }
       );
     }
@@ -29,7 +32,7 @@ export async function POST(request: Request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "Contacto Web <onboarding@resend.dev>", // Resend's test email
-      to: ["rodrigobarba653@gmail.com"],
+      to: ["info@lucilaaguilar.com"],
       replyTo: email,
       subject: `Nuevo mensaje de contacto - ${nombre}`,
       html: `
