@@ -76,9 +76,21 @@ export const exhibitionsData: Exhibition[] = [
     title: "Fyja",
     subtitle: "Conferencia internacional de arquitectura",
     description:
-      "Participación en  FYJA, Festival de Flores y Jardines 2025, sembrando una semilla para los &quot;Jardines del Futuro”.",
+      "Participación en  FYJA, Festival de Flores y Jardines 2025, sembrando una semilla para los &quot;Jardines del Futuro".",
     year: "2025",
     coverImage: "/images/exposiciones/fyja/fyja-portada.jpg",
     folderPath: "fyja",
+  },
+  {
+    id: "time-space-existence-2025",
+    slug: "time-space-existence-2025",
+    title: "Time Space Existence 2025",
+    subtitle: "Biennale Architettura - European Cultural Centre",
+    description:
+      "La instalación Cocoon en Time Space Existence 2025, European Cultural Centre, Palazzo Mora, presenta un refugio modular de bambú prefabricado que combina confort con bajo impacto ambiental. La muestra incluye estructura a escala, detalles constructivos y materiales naturales como bambú, junto con planos, maquetas y visualizaciones. El proyecto destaca montaje rápido, reversibilidad, huella mínima y adaptación a distintos climas como propuesta replicable para ecohoteles y retiros.",
+    year: "2025",
+    coverImage: "/images/exposiciones/time-space-existence-2025/01-tse-2025-portada.jpg",
+    folderPath: "time-space-existence-2025",
+    link: "https://www.timespaceexistence.com/",
   },
 ];
