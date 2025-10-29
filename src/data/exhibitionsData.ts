@@ -76,7 +76,7 @@ export const exhibitionsData: Exhibition[] = [
     title: "Fyja",
     subtitle: "Conferencia internacional de arquitectura",
     description:
-      "Participación en  FYJA, Festival de Flores y Jardines 2025, sembrando una semilla para los &quot;Jardines del Futuro".",
+      "Participación en FYJA, Festival de Flores y Jardines 2025, sembrando una semilla para los 'Jardines del Futuro'.",
     year: "2025",
     coverImage: "/images/exposiciones/fyja/fyja-portada.jpg",
     folderPath: "fyja",
