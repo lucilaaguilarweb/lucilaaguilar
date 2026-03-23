@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex space-x-4 mb-4 md:mb-0">
               <a
-                href=" https://www.instagram.com/lucilaarq/?hl=es-la"
+                href="https://www.instagram.com/ae.arquitectos.mx?igsh=bTRrZHlhajNnYnJ4&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-black"
