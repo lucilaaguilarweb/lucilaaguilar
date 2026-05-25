@@ -6,6 +6,17 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
   {
+    year: "2026",
+    title: "100 Best Architects of the World",
+    description:
+      "Reconocimiento internacional a visión arquitectónica sustentable e innovadora.",
+  },
+  {
+    year: "2026",
+    title: "WLCC Member",
+    description: "Global recognition in luxury sustainable architecture.",
+  },
+  {
     year: "2025",
     title: "Cocoon Project - Luxury Lifestyle Award",
     description: "Best Sustainable Hotel Architecture in México.",

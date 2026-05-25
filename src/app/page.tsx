@@ -49,7 +49,7 @@ export default function Home() {
       enabled: true,
       maxInset: 80,
       minInset: 0,
-    }
+    },
   );
 
   return (
@@ -96,6 +96,22 @@ export default function Home() {
             <div className="relative w-24 h-24 p-1">
               <Image
                 src="/images/herologo2.png"
+                alt="Logo 2"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="relative w-24 h-24">
+              <Image
+                src="/images/herologo3.png"
+                alt="Logo 1"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="relative w-24 h-24 p-1">
+              <Image
+                src="/images/herologo4.png"
                 alt="Logo 2"
                 fill
                 className="object-contain"
@@ -369,7 +385,7 @@ export default function Home() {
             </div>
 
             {/* Timeline content */}
-            <div className="grid md:grid-cols-5 md:grid-rows-1 grid-rows-5 gap-4 mb-16">
+            <div className="grid md:grid-cols-7 md:grid-rows-1 grid-rows-7 gap-4 mb-16">
               {timelineData.map((item, index) => (
                 <div key={index} className="text-left">
                   <div className="text-2xl font-normal mb-2">{item.year}</div>
@@ -384,7 +400,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a href="#">Explora nuestra trayectoria completa</a>
+          <a href="/estudio">Explora nuestra trayectoria completa</a>
         </div>
       </section>
 
@@ -432,7 +448,7 @@ export default function Home() {
               inspirar y compartir soluciones sostenibles con el mundo.
             </p>
             <a
-              href="#"
+              href="/medios"
               className="text-gray-900 font-semibold underline hover:no-underline transition-all"
             >
               VER MEDIOS
