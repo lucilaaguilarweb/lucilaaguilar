@@ -9,7 +9,7 @@ export const timelineData: TimelineItem[] = [
     year: "2026",
     title: "100 Best Architects of the World",
     description:
-      "Reconocimiento internacional a visión arquitectónica sustentable e innovadora.",
+      "International recognition for a sustainable and innovative architectural vision.",
   },
   {
     year: "2026",

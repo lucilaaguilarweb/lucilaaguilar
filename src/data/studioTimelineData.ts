@@ -6,6 +6,11 @@ export interface StudioTimelineItem {
 
 export const studioTimelineData: StudioTimelineItem[] = [
   {
+    year: "2026",
+    title: "100 Best Architects of the World and WLCC Member",
+    description: "• 100 Best Architects of the World\n\n• WLCC Member",
+  },
+  {
     year: "2025",
     title: "Cocoon Project - Reconocimientos Internacionales",
     description:
