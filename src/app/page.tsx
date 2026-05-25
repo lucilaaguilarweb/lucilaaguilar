@@ -447,12 +447,12 @@ export default function Home() {
               Existence 2021 y 2025. Publicamos manuales y recursos para
               inspirar y compartir soluciones sostenibles con el mundo.
             </p>
-            <a
+            <Link
               href="/medios"
               className="text-gray-900 font-semibold underline hover:no-underline transition-all"
             >
               VER MEDIOS
-            </a>
+            </Link>
           </div>
         </div>
       </section>
