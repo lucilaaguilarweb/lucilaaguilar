@@ -7,7 +7,7 @@ export interface TimelineItem {
 export const timelineData: TimelineItem[] = [
   {
     year: "2026",
-    title: "100 Best Architects of the World",
+    title: "Top 100 Architects of the World",
     description:
       "International recognition for a sustainable and innovative architectural vision.",
   },
